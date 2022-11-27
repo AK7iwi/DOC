@@ -1,2 +1,5 @@
 1) Structure en C
 	https://zestedesavoir.com/tutoriels/755/le-langage-c-1/1043_aggregats-memoire-et-fichiers/4279_structures/
+
+2) Structure / Liste chainee C
+	https://chgi.developpez.com/liste/

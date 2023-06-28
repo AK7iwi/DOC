@@ -8,3 +8,11 @@
 	Partition : https://www.youtube.com/watch?v=OQEdjt38ZJA
 	Configuration : https://baigal.medium.com/born2beroot-e6e26dfb50ac
 	Aide + script et ligne passwrd(ucredit,..) : https://github.com/HEADLIGHTER/Born2BeRoot-42/blob/main/walkthrough37.txt
+
+4) Variable locale, globale,statique C
+
+https://www.codequoi.com/variables-locales-globales-statiques-en-c/
+
+5)Signal C
+
+https://www.codequoi.com/envoyer-et-intercepter-un-signal-en-c/#:~:text=Envoyer%20des%20signaux%20avec%20la,leur%20propre%20commande%20kill%20interne.

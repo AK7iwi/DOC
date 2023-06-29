@@ -21,4 +21,6 @@ https://medium.com/@oduwoledare/42-minitalk-explained-5b236adc2c24
 
 6) Bitwise
 
+https://www.codequoi.com/binaire-010-operations-bitwise-bit-shifting/
+
 https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301

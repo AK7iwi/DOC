@@ -16,3 +16,5 @@ https://www.codequoi.com/variables-locales-globales-statiques-en-c/
 5)Signal C
 
 https://www.codequoi.com/envoyer-et-intercepter-un-signal-en-c/#:~:text=Envoyer%20des%20signaux%20avec%20la,leur%20propre%20commande%20kill%20interne.
+
+https://medium.com/@oduwoledare/42-minitalk-explained-5b236adc2c24

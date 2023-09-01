@@ -24,3 +24,38 @@ https://medium.com/@oduwoledare/42-minitalk-explained-5b236adc2c24
 https://www.codequoi.com/binaire-010-operations-bitwise-bit-shifting/
 
 https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301
+
+7) Parsing Struct / Info Struct
+
+Stuct modifer dans une fct booleen, pas les int,char,...
+
+Ex : typedef struct s_error
+{
+    int     error_g;
+}	t_error;
+
+void init_error(t_error *error)
+{
+	error->error_g = 0;
+}
+
+int is_int(t_error *error, int i)
+{
+	if(error->error_g > 3)
+		return(1);
+	error->error_g = 88;
+	i = 42;
+	return(0);
+}
+int main()
+{
+	t_error *error;
+	int i;
+    
+    error = malloc(sizeof(t_error));
+	i = 0;
+    init_error(error);
+	if(is_int(error,i) == 0)
+		printf("%i%i", error->error_g, i);
+	return(0);
+}

@@ -27,9 +27,9 @@ https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301
 
 7) Parsing Struct / Info Struct
 
-Stuct modifer dans une fct booleen, pas les int,char,...
+Stuct modifer dans une fct, pas les int,char,... Besoin d'un return;
 
-Ex : 
+Ex1 : 
 
 typedef struct s_error
 {
@@ -63,5 +63,38 @@ int main()
 		printf("%i%i", error->error_g, i);
 	printf("%i%i", error->error_g, i);
 	free(error);
+	return(0);
+}
+Ex2: 
+typedef struct s_error
+{
+    int     error_g;
+}	t_error;
+
+void init_error(t_error *error)
+{
+	error->error_g = 5;
+}
+
+void is_int(t_error *error, int i)
+{
+	if(error->error_g > 3)
+	{
+		error->error_g = 77;
+		i = 55;
+	}
+	error->error_g = 88;
+	i = 42;
+}
+int main()
+{
+	t_error *error;
+	int i;
+    
+    error = malloc(sizeof(t_error));
+	i = 0;
+    init_error(error);
+	is_int(error,i);
+	printf("%i%i", error->error_g, i);
 	return(0);
 }

@@ -29,24 +29,27 @@ https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301
 
 Stuct modifer dans une fct booleen, pas les int,char,...
 
-Ex : typedef struct s_error
+Ex : 
+
+typedef struct s_error
 {
     int     error_g;
 }	t_error;
 
-void init_error(t_error *error)
-{
-	error->error_g = 0;
-}
-
 int is_int(t_error *error, int i)
 {
 	if(error->error_g > 3)
+	{
+		error->error_g = 77;
+		i = 55;
 		return(1);
+
+	}
 	error->error_g = 88;
 	i = 42;
 	return(0);
 }
+
 int main()
 {
 	t_error *error;
@@ -54,8 +57,11 @@ int main()
     
     error = malloc(sizeof(t_error));
 	i = 0;
-    init_error(error);
+    error->error_g = 5;
+	//error->error_g = 0;
 	if(is_int(error,i) == 0)
 		printf("%i%i", error->error_g, i);
+	printf("%i%i", error->error_g, i);
+	free(error);
 	return(0);
 }

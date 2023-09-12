@@ -98,3 +98,44 @@ int main()
 	printf("%i%i", error->error_g, i);
 	return(0);
 }
+
+Ex3 Struct sans malloc + Struct qui pointe sur une struct 
+
+typedef struct s_error
+{
+    uint16_t    error_g;
+	uint8_t		exit;
+}				t_error;
+
+typedef struct	s_data 
+{
+	t_error *error;
+	char 	**map;
+}				t_data;
+
+// void	fake(t_error *error) {
+// 	error->error_g = 4;
+// }
+
+// void	fake2(t_data *data) {
+// 	data->endian = 42;
+// }
+
+// void	fake3(t_data *data) {
+// 	data->error->exit = 75;
+// }
+
+// printf("avant %d\n", error.error_g);
+// fake(data.error);
+// printf("apres %d\n", error.error_g);
+// printf("------------\n");
+
+// printf("avant %d\n", data.endian);
+// fake2(&data);
+// printf("apres %d\n", data.endian);
+// printf("------------\n");
+
+// printf("avant %d\n", data.error->exit);
+// fake3(&data);
+// printf("apres %d\n", data.error->exit);
+// printf("------------\n");

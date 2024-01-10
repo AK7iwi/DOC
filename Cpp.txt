@@ -1,0 +1,15 @@
+1) Pointeur et adresse C++ vs C
+
+C : 
+
+The & operator is used to obtain the memory address of a variable.
+The * operator is used to access the value pointed to by a pointer.
+
+C++ : 
+
+obtain memory addresses using the & operator and
+access values using the * operator for pointers. 
+The reference stringREF behaves similarly to a pointer but 
+is more like an alias
+
+Voir cpp_pool cpp01/ex02

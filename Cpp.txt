@@ -15,3 +15,7 @@ The reference stringREF behaves similarly to a pointer but
 is more like an alias
 
 Voir cpp_pool cpp01/ex02
+
+2) Constructeur
+
+	CPP02

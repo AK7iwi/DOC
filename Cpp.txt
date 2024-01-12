@@ -1,5 +1,7 @@
 1) Pointeur et adresse C++ vs C
 
+https://cpp.developpez.com/cours/cpp/?page=page_6
+
 C : 
 
 The & operator is used to obtain the memory address of a variable.

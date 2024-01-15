@@ -65,7 +65,9 @@ int main()
 	free(error);
 	return(0);
 }
+
 Ex2: 
+
 typedef struct s_error
 {
     int     error_g;
@@ -86,6 +88,7 @@ void is_int(t_error *error, int i)
 	error->error_g = 88;
 	i = 42;
 }
+
 int main()
 {
 	t_error *error;
@@ -99,7 +102,7 @@ int main()
 	return(0);
 }
 
-Ex3 Struct sans malloc + Struct qui pointe sur une struct 
+Ex3 Struct sans malloc + Struct qui pointe sur une struct (voir Parsing so_long(init avec bzero))
 
 typedef struct s_error
 {

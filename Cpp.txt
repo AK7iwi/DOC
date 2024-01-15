@@ -16,6 +16,6 @@ is more like an alias
 
 Voir cpp_pool cpp01/ex02
 
-2) Constructeur
+2) Constructeur/cpy Constructeur/ destructor
 
 	CPP02

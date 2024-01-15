@@ -18,4 +18,24 @@ Voir cpp_pool cpp01/ex02
 
 2) Constructeur/cpy Constructeur/ destructor
 
-	CPP02
+	CPP02:
+	
+	int main( void )
+	{
+		Fixed a;
+		Fixed b( a );
+		Fixed c;
+	
+		c = b;
+	
+		std::cout << a.getRawBits() << std::endl;
+		std::cout << b.getRawBits() << std::endl;
+		std::cout << c.getRawBits() << std::endl;
+		return 0;
+	}
+
+	Fixed(a) : Appel le default constructor
+	Fixed b (a) : appelle copy comstructor 
+	FIxed c: Appel le default constructor
+	c = b : Appel le copy assignement operator
+

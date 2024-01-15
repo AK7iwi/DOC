@@ -142,3 +142,6 @@ typedef struct	s_data
 // fake3(&data);
 // printf("apres %d\n", data.error->exit);
 // printf("------------\n");
+
+8) Thread : Philo
+

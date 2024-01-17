@@ -39,3 +39,18 @@ Voir cpp_pool cpp01/ex02
 	FIxed c: Appel le default constructor
 	c = b : Appel le copy assignement operator
 
+
+	Forme canonical : https://scg.unibe.ch/download/p2/11Cpp.pdf page 28
+
+	class myClass 
+	{
+		public:
+			myClass(void);   // default constructor
+			myClass(const myClass& copy); // copy constructor
+			...     					// other constructors
+			~myClass(void);   // destructor
+			myClass& operator=(const myClass&); // assignment
+			...    	// other public member functions 
+		private: 
+	}
+

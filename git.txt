@@ -7,3 +7,7 @@ https://docs.github.com/en/get-started/exploring-projects-on-github/contributing
 Why do I have to "git push --set-upstream origin <branch>" for a new branch?
 
 https://stackoverflow.com/questions/37770467/why-do-i-have-to-git-push-set-upstream-origin-branch
+
+Supprimer une branche local ou distante 
+
+https://www.sebastien-gandossi.fr/blog/git-supprimer-une-branche-locale-ou-distante

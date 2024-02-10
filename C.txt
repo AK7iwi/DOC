@@ -27,9 +27,9 @@ https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301
 
 7) Parsing Struct / Info Struct
 
-Stuct modifer dans une fct, pas les int,char,... Besoin d'un return;
+Stuct modifer dans une fct. Pas les int,char,... Besoin d'un return;
 
-Ex1 : 
+Ex1) 
 
 typedef struct s_error
 {
@@ -66,7 +66,7 @@ int main()
 	return(0);
 }
 
-Ex2: 
+Ex2)
 
 typedef struct s_error
 {
@@ -102,7 +102,7 @@ int main()
 	return(0);
 }
 
-Ex3 Struct sans malloc + Struct qui pointe sur une struct (voir Parsing so_long(init avec bzero))
+Ex3) Struct sans malloc + Struct qui pointe sur une struct (voir Parsing so_long(init avec bzero))
 
 typedef struct s_error
 {

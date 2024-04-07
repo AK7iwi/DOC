@@ -2,8 +2,8 @@
 
 // ctrl + j - open the terminal
 // alt + fleche_up/fleche_down - monter/descendre une ligne
-// shift + fleche_left/fleche_right = selectionner sourligner
+// shift + fleche_left/fleche_right = selectionner surligner
 // shift + tab - tab sens inverse
 // ctrl x - couper une ligne
-// ctrl + / - commentere
+// ctrl + / - commentaire
 // ctrl + fleche_right/fleche_left = bouger de mot en mot

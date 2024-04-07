@@ -54,3 +54,9 @@ Voir cpp_pool cpp01/ex02
 		private: 
 	}
 
+3) Static methode dasns le .hpp vs dans le .cpp
+
+Dans le .cpp comme en C. La fct n'est utilise que dans le fichier et il ne faut pas la redeclarer dans le .hpp
+Dans le point .hpp la fct est utiliser en dehors du fichier mais elle n'est pas instantiable. ex: cpp06/ex00 (static void convert) 
+	
+

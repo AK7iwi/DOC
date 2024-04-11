@@ -60,3 +60,6 @@ Dans le .cpp comme en C. La fct n'est utilise que dans le fichier et il ne faut 
 Dans le point .hpp la fct est utiliser en dehors du fichier mais elle n'est pas instantiable. ex: cpp06/ex00 (static void convert) 
 	
 
+4) Cast 
+
+https://www.geeksforgeeks.org/dynamic-_cast-in-cpp/

@@ -63,3 +63,14 @@ Dans le point .hpp la fct est utiliser en dehors du fichier mais elle n'est pas 
 4) Cast 
 
 https://www.geeksforgeeks.org/dynamic-_cast-in-cpp/
+
+
+5) Exception
+
+Soit en "catchant" l'eception, 
+
+Soit avec .what
+
+6)Container 
+
+https://en.cppreference.com/w/cpp/container

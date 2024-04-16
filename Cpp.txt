@@ -67,10 +67,12 @@ https://www.geeksforgeeks.org/dynamic-_cast-in-cpp/
 
 5) Exception
 
-Soit en "catchant" l'eception, 
+Soit en "catchant" l'exeption, 
 
 Soit avec .what
 
 6)Container 
 
 https://en.cppreference.com/w/cpp/container
+
+7)Methode static

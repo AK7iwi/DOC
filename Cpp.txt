@@ -76,3 +76,5 @@ Soit avec .what
 https://en.cppreference.com/w/cpp/container
 
 7)Methode static
+
+STatic methode ne partage pas les attributs public,prive ou protected

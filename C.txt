@@ -9,9 +9,11 @@
 	Configuration : https://baigal.medium.com/born2beroot-e6e26dfb50ac
 	Aide + script et ligne passwrd(ucredit,..) : https://github.com/HEADLIGHTER/Born2BeRoot-42/blob/main/walkthrough37.txt
 
-4) Variable locale, globale,statique C
+4) Variable locale, globale, statique C
 
 https://www.codequoi.com/variables-locales-globales-statiques-en-c/
+
+Statique en C : 
 
 5)Signal C
 

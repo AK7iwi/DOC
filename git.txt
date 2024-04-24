@@ -4,7 +4,7 @@ How to fork and create a new branch
 https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project
 
 
-Why do I have to "git push --set-upstream origin <branch>" for a new branch?
+Why do I have to "git push --set-upstream origin <branch>" for a new branch the first time?
 
 https://stackoverflow.com/questions/37770467/why-do-i-have-to-git-push-set-upstream-origin-branch
 

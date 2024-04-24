@@ -1,9 +1,10 @@
 /* control's */
 
-// ctrl + j - open the terminal
+// ctrl + j - open the terminal in vscode
 // alt + fleche_up/fleche_down - monter/descendre une ligne
 // shift + fleche_left/fleche_right = selectionner surligner
 // shift + tab - tab sens inverse
 // ctrl x - couper une ligne
 // ctrl + / - commentaire
 // ctrl + fleche_right/fleche_left = bouger de mot en mot
+// ctrl + tab = changer de fenetre 

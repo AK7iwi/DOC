@@ -1,3 +1,14 @@
+
+0) Private, protected, public
+
+Private: Can be used only by the class(in the class(.cpp)?)
+
+Protected: Private but inherited class van also use the variavle or the method
+
+Public: Can be used anywhere 
+
+
+
 1) Pointeur et adresse C++ vs C
 
 https://cpp.developpez.com/cours/cpp/?page=page_6
@@ -20,10 +31,10 @@ Voir cpp_pool cpp01/ex02
 
 	CPP02:
 	
-	int main( void )
+	int main(void)
 	{
 		Fixed a;
-		Fixed b( a );
+		Fixed b(a);
 		Fixed c;
 	
 		c = b;
@@ -42,14 +53,14 @@ Voir cpp_pool cpp01/ex02
 
 	Forme canonical : https://scg.unibe.ch/download/p2/11Cpp.pdf page 28
 
-	class myClass 
+	class MyClass 
 	{
 		public:
-			myClass(void);   // default constructor
-			myClass(const myClass& copy); // copy constructor
+			MyClass(void);   // default constructor
+			MyClass(MyClass const &copy); // copy constructor
 			...     					// other constructors
-			~myClass(void);   // destructor
-			myClass& operator=(const myClass&); // assignment
+			~MyClass(void);   // destructor
+			MyClass& operator=(MyClass const &rhs); // assignment
 			...    	// other public member functions 
 		private: 
 	}
@@ -75,6 +86,17 @@ Soit avec .what
 
 https://en.cppreference.com/w/cpp/container
 
-7)Methode static
+7)Methode static/ static fct
 
-STatic methode ne partage pas les attributs public,prive ou protected
+a) Static methode ne partage pas les attributs public, private ou protected
+	Ne s'utilise pas sur un object (voir cpp06/ex00)
+
+b) Fct static: 
+
+Example : 
+
+class BitcoinExchange
+
+void exchange(), si utiliser que dans le .cpp <=> pas a declarer dans le .hpp
+
+void BitcoinExchange::exchange() <=> a declarer dans le .hpp

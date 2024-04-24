@@ -88,15 +88,18 @@ https://en.cppreference.com/w/cpp/container
 
 7)Methode static/ static fct
 
-a) Static methode ne partage pas les attributs public, private ou protected
+a) static methode Ne s'utilise pas sur un object (voir cpp06/ex00)
+
+a) Static fct ne partage pas les attributs public, private ou protected
 	Ne s'utilise pas sur un object (voir cpp06/ex00)
 
-b) Fct static: 
+b) Fct static: comme en C
 
 Example : 
 
 class BitcoinExchange
 
-void exchange(), si utiliser que dans le .cpp <=> pas a declarer dans le .hpp
+void BitcoinExchange::exchange() <=> a declarer dans le .hpp (pas static)
 
-void BitcoinExchange::exchange() <=> a declarer dans le .hpp
+void exchange(), si utiliser que dans le meme .cpp --> static void exchange() (static) 
+--> pas a declarer dans le .hpp

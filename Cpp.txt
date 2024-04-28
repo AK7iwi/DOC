@@ -3,10 +3,9 @@
 
 Private: Can be used only by the class(in the class(.cpp)?)
 
-Protected: Private but inherited class van also use the variavle or the method
+Protected: Private but inherited class can also use the variable or the method
 
 Public: Can be used anywhere 
-
 
 
 1) Pointeur et adresse C++ vs C
@@ -65,11 +64,15 @@ Voir cpp_pool cpp01/ex02
 		private: 
 	}
 
+
+	deep copy vs shallow copy 
+
 3) Static methode dasns le .hpp vs dans le .cpp
 
 Dans le .cpp comme en C. La fct n'est utilise que dans le fichier et il ne faut pas la redeclarer dans le .hpp
 Dans le point .hpp la fct est utiliser en dehors du fichier mais elle n'est pas instantiable. ex: cpp06/ex00 (static void convert) 
-	
+
+3.5) const
 
 4) Cast 
 
@@ -81,6 +84,8 @@ https://www.geeksforgeeks.org/dynamic-_cast-in-cpp/
 Soit en "catchant" l'exeption, 
 
 Soit avec .what
+
+Permet d'avoir des fct void au lieu de bool
 
 6)Container 
 
@@ -103,3 +108,58 @@ void BitcoinExchange::exchange() <=> a declarer dans le .hpp (pas static)
 
 void exchange(), si utiliser que dans le meme .cpp --> static void exchange() (static) 
 --> pas a declarer dans le .hpp
+
+
+8) Different type of stream string 
+
+
+9) Container 
+
+Different type:
+
+Vector: .find
+
+Map : 2 valeur --> it->first, it->second
+
+Print a Map container (string, double):
+for (std::map<std::string, double>::iterator it = _database.begin(); it != _database.end(); ++it)
+        std::cout << it->first << " => " << it->second << std::endl;
+
+Ne marche pas directement avec la methode .find:
+
+std::map<std::string, double>::const_iterator it = database.find(date); OK
+
+std::map<std::string, double>::iterator it = std::find(database.begin(), database.end(), date); X
+
+
+Why use a type:
+
+How to use it, how to print it:
+
+Different utils fct : .find, .begin .end
+
+10) Template fct 
+
+
+11)  DIfferent type de stream
+
+https://cplusplus.com/reference/iolibrary/
+
+a) istream: input stream
+
+https://cplusplus.com/reference/istream/istream/
+
+
+ifstream : input file stream
+
+https://cplusplus.com/reference/fstream/ifstream/
+
+istringstream : input string stream
+
+https://cplusplus.com/reference/sstream/istringstream/
+
+b) iostream: 
+
+
+c) ostream: 
+

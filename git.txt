@@ -11,3 +11,10 @@ https://stackoverflow.com/questions/37770467/why-do-i-have-to-git-push-set-upstr
 Supprimer une branche local ou distante 
 
 https://www.sebastien-gandossi.fr/blog/git-supprimer-une-branche-locale-ou-distante
+
+Merge : 
+
+Git sheetcheat 
+
+
+Norme commit :

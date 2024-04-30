@@ -115,15 +115,21 @@ void exchange(), si utiliser que dans le meme .cpp --> static void exchange() (s
 
 9) Container 
 
+https://cplusplus.com/reference/stl/
+
 Different type:
 
-Vector: .find
+a) Vector: 
 
-Map : 2 valeur --> it->first, it->second
+.find
 
-Print a Map container (string, double):
-for (std::map<std::string, double>::iterator it = _database.begin(); it != _database.end(); ++it)
-        std::cout << it->first << " => " << it->second << std::endl;
+b) Map : 
+
+2 valeur --> it->first, it->second
+
+Print a map container std::map<T, T> _database :
+for (std::map<T, T>::iterator it = _database.begin(); it != _database.end(); ++it)
+        std::cout << it->first << " && " << it->second << std::endl;
 
 Ne marche pas directement avec la methode .find:
 
@@ -131,12 +137,23 @@ std::map<std::string, double>::const_iterator it = database.find(date); OK
 
 std::map<std::string, double>::iterator it = std::find(database.begin(), database.end(), date); X
 
+c) Stack : 
+
+Print a stack container std::stack<T> _stack :
+while (!_stack.empty()) 
+{
+        std::cout << _stack.top() << " ";
+        _stack.pop();
+}
+    std::cout << std::endl;
+
+https://en.cppreference.com/w/cpp/container/stack
 
 Why use a type:
 
 How to use it, how to print it:
 
-Different utils fct : .find, .begin .end
+Different utils fct : .find, .begin .end .top .push .pop
 
 10) Template fct 
 

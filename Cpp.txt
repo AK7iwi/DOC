@@ -1,12 +1,17 @@
 
+0) Each class have their own mains --> cpp09
+
 0) Private, protected, public
 
-Private: Can be used only by the class(in the class(.cpp)?)
+Private: Can be used only by the methode in the class(in the class(.cpp)?)
 
 Protected: Private but inherited class can also use the variable or the method
 
 Public: Can be used anywhere 
 
+vs 
+
+static fct = fct utliser uniquement dans le fichier comme en c mais contrairement au methode private, il n a pas acces au variable prive
 
 1) Pointeur et adresse C++ vs C
 
@@ -72,7 +77,7 @@ Voir cpp_pool cpp01/ex02
 Dans le .cpp comme en C. La fct n'est utilise que dans le fichier et il ne faut pas la redeclarer dans le .hpp
 Dans le point .hpp la fct est utiliser en dehors du fichier mais elle n'est pas instantiable. ex: cpp06/ex00 (static void convert) 
 
-3.5) const
+3.5) const rules
 
 4) Cast 
 
@@ -81,17 +86,19 @@ https://www.geeksforgeeks.org/dynamic-_cast-in-cpp/
 
 5) Exception
 
-Soit en "catchant" l'exeption, 
+En "catchant" l'exeption
 
-Soit avec .what
+Soit une class error soit avec .what
 
 Permet d'avoir des fct void au lieu de bool
 
-6)Container 
+Liste class exception : 
 
-https://en.cppreference.com/w/cpp/container
+Different classe d'exception. 
+Ex: std::out_of_range, std::exception, std::runtime_error, std::invalid_argument
 
-7)Methode static/ static fct
+
+7) Methode static/ static fct
 
 a) static methode Ne s'utilise pas sur un object (voir cpp06/ex00)
 
@@ -110,20 +117,28 @@ void exchange(), si utiliser que dans le meme .cpp --> static void exchange() (s
 --> pas a declarer dans le .hpp
 
 
-8) Different type of stream string 
-
-
 9) Container 
+
+https://en.cppreference.com/w/cpp/container
 
 https://cplusplus.com/reference/stl/
 
-Different type:
+Different types : 
 
-a) Vector: 
+a) Vector 
+
+https://cplusplus.com/reference/vector/vector/
 
 .find
 
-b) Map : 
+Print : 
+
+for (std::vector<std::pair<int, int> >::iterator it = _vector.begin(); it != _vector.end(); it++)
+		std::cout << it->first << " ";
+
+b) Map 
+
+https://cplusplus.com/reference/map/map/
 
 2 valeur --> it->first, it->second
 
@@ -137,7 +152,9 @@ std::map<std::string, double>::const_iterator it = database.find(date); OK
 
 std::map<std::string, double>::iterator it = std::find(database.begin(), database.end(), date); X
 
-c) Stack : 
+c) Stack 
+
+https://en.cppreference.com/w/cpp/container/stack
 
 Print a stack container std::stack<T> _stack :
 while (!_stack.empty()) 
@@ -147,7 +164,10 @@ while (!_stack.empty())
 }
     std::cout << std::endl;
 
-https://en.cppreference.com/w/cpp/container/stack
+
+d) Deque
+
+https://cplusplus.com/reference/deque/deque/
 
 Why use a type:
 
@@ -177,6 +197,18 @@ https://cplusplus.com/reference/sstream/istringstream/
 
 b) iostream: 
 
-
 c) ostream: 
+
+
+
+x) List include utils :
+
+
+<iostream> : stream variable
+
+<stdexcept> : catch, try
+
+<stdint.h> : uint8_t
+
+<stdlib.h> : EXIT_FAILURE, EXIT_SUCCES
 

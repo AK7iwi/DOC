@@ -88,14 +88,34 @@ https://www.geeksforgeeks.org/dynamic-_cast-in-cpp/
 
 En "catchant" l'exeption
 
-Soit une class error soit avec .what
-
-Permet d'avoir des fct void au lieu de bool
+.what
 
 Liste class exception : 
 
-Different classe d'exception. 
-Ex: std::out_of_range, std::exception, std::runtime_error, std::invalid_argument
+Can be throw and catch.
+
+No need to be throw, to be catch 
+
+Ex: 
+
+try 
+{
+	(void)dynamic_cast<C &>(p);
+	std::cout << "Identify(Base &p): C" << std::endl;
+	return ;
+} 
+catch (std::exception const &e)
+{std::cout  << "Identify(Base &p): NULL" << std::endl;}
+
+I) std::exception --> use generally
+ 
+II) std::invalid_argument --> use for an invalid argument 
+
+III) std::out_of_range --> 
+
+IV) std::runtime_error --> 
+
+Print l'erreur en utilisant .what
 
 
 7) Methode static/ static fct
@@ -140,6 +160,8 @@ b) Map
 
 https://cplusplus.com/reference/map/map/
 
+container of key-value pairs
+
 2 valeur --> it->first, it->second
 
 Print a map container std::map<T, T> _database :
@@ -164,6 +186,7 @@ while (!_stack.empty())
 }
     std::cout << std::endl;
 
+stack dot have .clear() methode 
 
 d) Deque
 
@@ -171,9 +194,9 @@ https://cplusplus.com/reference/deque/deque/
 
 Why use a type:
 
-How to use it, how to print it:
+How to use it, how to print it, how to copy container in cpy constructor :
 
-Different utils fct : .find, .begin .end .top .push .pop
+Different utils fct : .find(), .begin() .end() .top() .push() .pop() .clear() 
 
 10) Template fct 
 

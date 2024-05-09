@@ -1,4 +1,4 @@
-/* control's */
+/* control list*/
 
 // ctrl + j - open the terminal in vscode
 // alt + fleche_up/fleche_down - monter/descendre une ligne

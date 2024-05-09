@@ -1,17 +1,22 @@
 
-0) Each class have their own mains --> cpp09
+0) Struct: Each class have their own mains --> cpp09
 
 0) Private, protected, public
 
-Private: Can be used only by the methode in the class(in the class(.cpp)?)
+Private: Can be used only by the methode in the class(in the class(.cpp)?). Acces to all variable in the class.
 
 Protected: Private but inherited class can also use the variable or the method
 
-Public: Can be used anywhere 
+Public: Can be used anywhere, in the mthode or directly by the object. Acces to all variable in the class.
 
 vs 
 
-static fct = fct utliser uniquement dans le fichier comme en c mais contrairement au methode private, il n a pas acces au variable prive
+Static methode : 
+
+Static functions :
+
+-Functions used uniquement dans le fichier comme en C mais contrairement au methode private, il n a pas acces au variable de la classe
+Ne peut pas se declarer dans le .hpp
 
 1) Pointeur et adresse C++ vs C
 
@@ -79,6 +84,33 @@ Dans le point .hpp la fct est utiliser en dehors du fichier mais elle n'est pas 
 
 3.5) const rules
 
+In C++, the placement of const in a function declaration specifies whether the function itself is constant or if the returned value is constant. Let's break down the two function declarations you provided:
+
+uint8_t inline get_grade() const;
+uint8_t const inline get_grade();
+
+In the first declaration:
+
+cpp
+Copy code
+uint8_t inline get_grade() const;
+The function get_grade() is declared as a member function of some class or struct.
+The const keyword at the end indicates that the member function get_grade() is a "const member function". This means that when this member function is called on a const object of the class or struct, it promises not to modify the object's data members.
+This function returns a uint8_t type.
+inline suggests that the function should be inlined by the compiler if possible. This is a hint to the compiler to replace calls to this function with the function's code directly where it's called.
+In the second declaration:
+
+cpp
+Copy code
+uint8_t const inline get_grade();
+This function declaration returns a const uint8_t. In this context, const applies to the return value rather than the function itself. It means that the value returned by get_grade() is const, i.e., it cannot be modified.
+The function itself is not declared as const, so it doesn't guarantee not to modify any class/struct data members. It's just a regular member function that returns a constant value.
+inline suggests the same behavior as in the first declaration.
+So, in summary:
+
+In the first declaration, const applies to the member function itself, making it a const member function. The return value is not const.
+In the second declaration, const applies to the return value, making it a const value. The member function itself is not const
+
 4) Cast 
 
 https://www.geeksforgeeks.org/dynamic-_cast-in-cpp/
@@ -91,6 +123,9 @@ En "catchant" l'exeption
 .what
 
 Liste class exception : 
+
+See : "Exception categories
+https://en.cppreference.com/w/cpp/error
 
 Can be throw and catch.
 
@@ -107,13 +142,17 @@ try
 catch (std::exception const &e)
 {std::cout  << "Identify(Base &p): NULL" << std::endl;}
 
-I) std::exception --> use generally
+Class exception I used: 
+
+I) std::exception --> use in general
  
 II) std::invalid_argument --> use for an invalid argument 
 
 III) std::out_of_range --> 
 
-IV) std::runtime_error --> 
+IV) std::length_error --> 
+
+V) std::runtime_error --> 
 
 Print l'erreur en utilisant .what
 
@@ -229,7 +268,7 @@ x) List include utils :
 
 <iostream> : stream variable
 
-<stdexcept> : catch, try
+<stdexcept> : catch, try, throw, exception class
 
 <stdint.h> : uint8_t
 

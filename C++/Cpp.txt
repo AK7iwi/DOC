@@ -48,9 +48,6 @@ Voir cpp_pool cpp01/ex02
 	
 		c = b;
 	
-		std::cout << a.getRawBits() << std::endl;
-		std::cout << b.getRawBits() << std::endl;
-		std::cout << c.getRawBits() << std::endl;
 		return 0;
 	}
 
@@ -69,11 +66,10 @@ Voir cpp_pool cpp01/ex02
 			MyClass(MyClass const &copy); // copy constructor
 			...     					// other constructors
 			~MyClass(void);   // destructor
-			MyClass& operator=(MyClass const &rhs); // assignment
+			MyClass& operator=(MyClass const &rhs); // assignement
 			...    	// other public member functions 
 		private: 
 	}
-
 
 	deep copy vs shallow copy 
 
@@ -82,34 +78,68 @@ Voir cpp_pool cpp01/ex02
 Dans le .cpp comme en C. La fct n'est utilise que dans le fichier et il ne faut pas la redeclarer dans le .hpp
 Dans le point .hpp la fct est utiliser en dehors du fichier mais elle n'est pas instantiable. ex: cpp06/ex00 (static void convert) 
 
-3.5) const rules
+3.5) Const Rules
+
+In methode, functions:
 
 In C++, the placement of const in a function declaration specifies whether the function itself is constant or if the returned value is constant. Let's break down the two function declarations you provided:
 
-uint8_t inline get_grade() const;
-uint8_t const inline get_grade();
+int get_grade() const;
+int const get_grade();
+int get_grade(const &var);
 
-In the first declaration:
+1. int get_grade() const;
 
-cpp
-Copy code
-uint8_t inline get_grade() const;
-The function get_grade() is declared as a member function of some class or struct.
-The const keyword at the end indicates that the member function get_grade() is a "const member function". This means that when this member function is called on a const object of the class or struct, it promises not to modify the object's data members.
-This function returns a uint8_t type.
-inline suggests that the function should be inlined by the compiler if possible. This is a hint to the compiler to replace calls to this function with the function's code directly where it's called.
-In the second declaration:
+This prototype indicates a member function of a class. 
+The const at the end of the function declaration means that this member function is a "const member function". 
+It implies that the member function doesn't modify the state of the object on which it's called. 
+In other words, it promises not to modify any member variables of the class. 
+This is often used to prevent unintended modification of member variables when calling a member function on a const object.
 
-cpp
-Copy code
-uint8_t const inline get_grade();
-This function declaration returns a const uint8_t. In this context, const applies to the return value rather than the function itself. It means that the value returned by get_grade() is const, i.e., it cannot be modified.
-The function itself is not declared as const, so it doesn't guarantee not to modify any class/struct data members. It's just a regular member function that returns a constant value.
-inline suggests the same behavior as in the first declaration.
-So, in summary:
+2. int const get_grade();
 
-In the first declaration, const applies to the member function itself, making it a const member function. The return value is not const.
-In the second declaration, const applies to the return value, making it a const value. The member function itself is not const
+This prototype declares a function that returns an int const. 
+This means that the returned integer value is constant, and cannot be modified. 
+However, this doesn't specify anything about the function itself. It could be a standalone function or a member function. 
+If it's a member function, it's not a const member function, which means it can modify the state of the object.
+
+3. int get_grade(const &var);
+
+This prototype declares a function that takes a constant reference (const &) to some variable (var). 
+This is typically used when you want to pass a parameter to a function without allowing that function to modify the parameter. 
+It's useful for functions that need to read but not modify the passed object.
+
+When to Use Them:
+
+int get_grade() const; : 
+
+Use this when defining a member function that doesn't modify the state of the object. 
+This is especially useful in situations where you're dealing with const objects or when you want to ensure the function doesn't inadvertently modify the object.
+
+int const get_grade(); : 
+
+This is less common in practice. It's used when you want to return a constant value. 
+However, it's generally better to return primitive types directly rather than returning them as constants.
+
+int get_grade(const &var); : 
+
+Use this when you want to pass a parameter by reference to a function but don't want the function to modify the original value of the parameter. 
+It's particularly useful when dealing with large objects where passing by value would be inefficient or when you want to guarantee that the original object remains unchanged.
+
+
+For the catch : 
+
+When writing a catch block in C++ to catch exceptions, you generally have two options:
+
+catch (std::exception &e): This catches exceptions by non-const reference. It allows you to modify the caught exception object within the catch block. 
+However, modifying the caught exception object is not common practice and may not be necessary in most situations. 
+Also, using non-const references in the catch block can lead to unintended modifications and might not be the best practice unless you have a specific need to modify the exception object.
+
+catch (std::exception const &e): This catches exceptions by const reference. 
+It prevents you from modifying the caught exception object within the catch block.
+Catching exceptions by const reference is generally considered safer and more idiomatic, as it ensures that the caught exception object remains unchanged.
+In summary, it's generally recommended to use catch (std::exception const &e) unless you have a specific reason to modify the caught exception object, in which case you might use catch (std::exception &e). 
+However, modifying the exception object is rare and should be done judiciously.
 
 4) Cast 
 
@@ -137,12 +167,11 @@ try
 {
 	(void)dynamic_cast<C &>(p);
 	std::cout << "Identify(Base &p): C" << std::endl;
-	return ;
 } 
 catch (std::exception const &e)
 {std::cout  << "Identify(Base &p): NULL" << std::endl;}
 
-Class exception I used: 
+Class exception I used most: 
 
 I) std::exception --> use in general
  
@@ -156,10 +185,13 @@ V) std::runtime_error -->
 
 Print l'erreur en utilisant .what
 
+If own exception class and general exception : First class the own exception and after the general. (See cpp05/ex03 test4)  
+Si classe d'exception perso + exception de base. First catch the  
+
 
 7) Methode static/ static fct
 
-a) static methode Ne s'utilise pas sur un object (voir cpp06/ex00)
+a) static methode ne s'utilise pas sur un object (voir cpp06/ex00)
 
 a) Static fct ne partage pas les attributs public, private ou protected
 	Ne s'utilise pas sur un object (voir cpp06/ex00)
@@ -274,3 +306,7 @@ x) List include utils :
 
 <stdlib.h> : EXIT_FAILURE, EXIT_SUCCES
 
+
+12) Inline in c++
+
+https://stackoverflow.com/questions/9338152/must-the-definition-of-a-c-inline-functions-be-in-the-same-file

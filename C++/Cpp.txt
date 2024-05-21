@@ -11,12 +11,37 @@ Public: Can be used anywhere, in the mthode or directly by the object. Acces to 
 
 vs 
 
+//rewrite
+
 Static methode : 
+Dans le .hpp vs dans le .cpp
+
+Dans le .cpp comme en C. La fct n'est utilise que dans le fichier et il ne faut pas la redeclarer dans le .hpp
+Dans le point .hpp la fct est utiliser en dehors du fichier mais elle n'est pas instantiable. ex: cpp06/ex00 (static void convert) 
 
 Static functions :
 
 -Functions used uniquement dans le fichier comme en C mais contrairement au methode private, il n a pas acces au variable de la classe
 Ne peut pas se declarer dans le .hpp
+
+7) Methode static/ static fct
+
+a) static methode ne s'utilise pas sur un object (voir cpp06/ex00)
+
+a) Static fct ne partage pas les attributs public, private ou protected
+	Ne s'utilise pas sur un object (voir cpp06/ex00)
+
+b) Fct static: comme en C
+
+Example : 
+
+class BitcoinExchange
+
+void BitcoinExchange::exchange() <=> a declarer dans le .hpp (pas static)
+
+void exchange(), si utiliser que dans le meme .cpp --> static void exchange() (static) 
+--> pas a declarer dans le .hpp
+
 
 1) Pointeur et adresse C++ vs C
 
@@ -73,12 +98,7 @@ Voir cpp_pool cpp01/ex02
 
 	deep copy vs shallow copy 
 
-3) Static methode dasns le .hpp vs dans le .cpp
-
-Dans le .cpp comme en C. La fct n'est utilise que dans le fichier et il ne faut pas la redeclarer dans le .hpp
-Dans le point .hpp la fct est utiliser en dehors du fichier mais elle n'est pas instantiable. ex: cpp06/ex00 (static void convert) 
-
-3.5) Const Rules
+3) Const Rules
 
 In methode, functions:
 
@@ -146,7 +166,7 @@ However, modifying the exception object is rare and should be done judiciously.
 https://www.geeksforgeeks.org/dynamic-_cast-in-cpp/
 
 
-5) Exception
+5) Exception //rewrite
 
 En "catchant" l'exeption
 
@@ -187,25 +207,6 @@ Print l'erreur en utilisant .what
 
 If own exception class and general exception : First class the own exception and after the general. (See cpp05/ex03 test4)  
 Si classe d'exception perso + exception de base. First catch the  
-
-
-7) Methode static/ static fct
-
-a) static methode ne s'utilise pas sur un object (voir cpp06/ex00)
-
-a) Static fct ne partage pas les attributs public, private ou protected
-	Ne s'utilise pas sur un object (voir cpp06/ex00)
-
-b) Fct static: comme en C
-
-Example : 
-
-class BitcoinExchange
-
-void BitcoinExchange::exchange() <=> a declarer dans le .hpp (pas static)
-
-void exchange(), si utiliser que dans le meme .cpp --> static void exchange() (static) 
---> pas a declarer dans le .hpp
 
 
 9) Container 
@@ -293,9 +294,7 @@ b) iostream:
 
 c) ostream: 
 
-
-
-x) List include utils :
+I) List include utils :
 
 
 <iostream> : stream variable

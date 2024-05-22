@@ -1,7 +1,7 @@
 
 0) Struct: Each class have their own mains --> cpp09
 
-0) Private, protected, public
+1) Private, protected, public
 
 Private: Can be used only by the methode in the class(in the class(.cpp)?). Acces to all variable in the class.
 
@@ -24,7 +24,7 @@ Static functions :
 -Functions used uniquement dans le fichier comme en C mais contrairement au methode private, il n a pas acces au variable de la classe
 Ne peut pas se declarer dans le .hpp
 
-7) Methode static/ static fct
+ Methode static/ static fct :
 
 a) static methode ne s'utilise pas sur un object (voir cpp06/ex00)
 
@@ -43,7 +43,7 @@ void exchange(), si utiliser que dans le meme .cpp --> static void exchange() (s
 --> pas a declarer dans le .hpp
 
 
-1) Pointeur et adresse C++ vs C
+2) Pointeur et adresse C++ vs C
 
 https://cpp.developpez.com/cours/cpp/?page=page_6
 
@@ -52,7 +52,7 @@ C :
 The & operator is used to obtain the memory address of a variable.
 The * operator is used to access the value pointed to by a pointer.
 
-C++ : 
+C++ : ~~~~~~~
 
 obtain memory addresses using the & operator and
 access values using the * operator for pointers. 
@@ -61,7 +61,8 @@ is more like an alias
 
 Voir cpp_pool cpp01/ex02
 
-2) Constructeur/cpy Constructeur/ destructor
+
+3) Constructeur/cpy Constructeur/ destructor
 
 	CPP02:
 	
@@ -98,7 +99,7 @@ Voir cpp_pool cpp01/ex02
 
 	deep copy vs shallow copy 
 
-3) Const Rules
+4) Const Rules
 
 In methode, functions:
 
@@ -161,12 +162,15 @@ Catching exceptions by const reference is generally considered safer and more id
 In summary, it's generally recommended to use catch (std::exception const &e) unless you have a specific reason to modify the caught exception object, in which case you might use catch (std::exception &e). 
 However, modifying the exception object is rare and should be done judiciously.
 
-4) Cast 
+
+To good to know : You can const if you only have to cast. Cast not change the value.
+
+5) Cast 
 
 https://www.geeksforgeeks.org/dynamic-_cast-in-cpp/
 
 
-5) Exception //rewrite
+6) Exception //rewrite
 
 En "catchant" l'exeption
 
@@ -209,7 +213,7 @@ If own exception class and general exception : First class the own exception and
 Si classe d'exception perso + exception de base. First catch the  
 
 
-9) Container 
+7) Container 
 
 https://en.cppreference.com/w/cpp/container
 
@@ -270,10 +274,10 @@ How to use it, how to print it, how to copy container in cpy constructor :
 
 Different utils fct : .find(), .begin() .end() .top() .push() .pop() .clear() 
 
-10) Template fct 
+8) Template fct 
 
 
-11)  DIfferent type de stream
+9)  DIfferent type de stream
 
 https://cplusplus.com/reference/iolibrary/
 
@@ -306,6 +310,56 @@ I) List include utils :
 <stdlib.h> : EXIT_FAILURE, EXIT_SUCCES
 
 
-12) Inline in c++
+10) Inline in c++
 
 https://stackoverflow.com/questions/9338152/must-the-definition-of-a-c-inline-functions-be-in-the-same-file
+
+11) const and &
+
+Ex(cpp05/ex00) :
+
+Bureaucrat::Bureaucrat(const std::string &name, int grade) : 
+    _name(name)
+{
+    if (grade < 1)
+        throw grade_too_high_exception();
+    else if (grade > 150)
+        throw grade_too_low_exception();
+        
+    _grade = grade;
+}
+
+a) is it good to write & before te grade ?
+
+In the case of the int grade parameter, it is generally not necessary or beneficial to use a reference (int &grade) or a const reference (const int &grade). 
+This is because int is a small, built-in type that is cheap to copy. 
+Using a reference for such types can actually be less efficient due to the overhead of reference handling.
+
+Here's why you should use int directly for the grade parameter:
+
+    Efficiency: Copying an int is extremely cheap and likely more efficient than the cost of dereferencing a reference.
+    Simplicity: Passing small built-in types like int by value keeps the code simple and straightforward.
+
+Summary
+
+    Use const std::string & for the name parameter: This avoids unnecessary copying of potentially large objects.
+    Use int for the grade parameter: This is simple, efficient, and suitable for small built-in types.
+
+b) why not const before grade ?
+
+Using const before the int grade parameter in the constructor signature would not provide any additional benefits and might actually lead to confusion. Here's why:
+
+Value Parameters are Immutable by Default: When a parameter is passed by value, the function receives a copy of the argument. 
+Modifying this copy does not affect the original argument passed to the function. 
+Since the copy is local to the function, it does not need to be declared const to prevent modification outside the function.
+
+Clarity: Declaring const int grade in the parameter list might imply that the parameter is being passed by reference or pointer, which can be misleading. 
+It is more common and clearer to use const with reference or pointer types.
+
+Convention: By convention, small built-in types like int, char, float, and double are passed by value without const in the parameter list. 
+This is standard practice in C++ and aligns with typical expectations of other developers reading your code.
+
+Summary
+
+In this specific context, adding const before int grade in the constructor parameter list does not provide any meaningful benefits and can detract from the clarity and readability of the code. 
+The conventional and idiomatic approach is to pass such parameters by value without const.

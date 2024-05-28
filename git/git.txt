@@ -17,4 +17,10 @@ Merge :
 Git sheetcheat 
 
 
+Description: 
+
+There is also another straight and more clear way
+
+git commit -m "Title" -m "Description ..........";
+
 Norme commit :

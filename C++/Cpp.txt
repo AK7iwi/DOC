@@ -312,7 +312,6 @@ c) ostream:
 
 I) List include utils :
 
-
 <iostream> : stream variable
 
 <stdexcept> : catch, try, throw, exception class
@@ -328,7 +327,10 @@ https://stackoverflow.com/questions/9338152/must-the-definition-of-a-c-inline-fu
 
 An inline method can be used inly in the same file.(As static method).
  
-Can be used anywhere with template fct because fct template are inline by definition 
+Can be used anywhere with template fct because fct template are inline by definition.
+So should i inline fct template if I can?
+
+Est que inline fonctionne si meme class mais dans un autre fichier??
 
 11) const and &
 

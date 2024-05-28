@@ -16,6 +16,10 @@ Merge :
 
 Git sheetcheat 
 
+Rewrite a commit: 
+
+git commit --amend
+git push -f (if the commit is already push)
 
 Description: 
 
@@ -24,3 +28,8 @@ There is also another straight and more clear way
 git commit -m "Title" -m "Description ..........";
 
 Norme commit :
+
+
+feat(graphics): this and
+fix 
+refacto

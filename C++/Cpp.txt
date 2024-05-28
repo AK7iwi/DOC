@@ -178,8 +178,6 @@ Reinterpret cast :
 It is used to convert a pointer of some data type into a pointer of another data type, even if the data types before and after conversion are different.
 It does not check if the pointer type and data pointed by the pointer is same or not.
 
-
-
 6) Exception //rewrite
 
 En "catchant" l'exeption
@@ -272,7 +270,10 @@ while (!_stack.empty())
 }
     std::cout << std::endl;
 
-stack dot have .clear() methode 
+stack doesn't have .clear() methode but have .pop()
+
+Also have .push(): 
+https://en.cppreference.com/w/cpp/container/stack/push
 
 c is a stack variable (see cpp08/ex02)
 
@@ -289,7 +290,7 @@ Different utils fct : .find(), .begin() .end() .top() .push() .pop() .clear()
 8) Template fct 
 
 
-9)  DIfferent type de stream
+9) Different type de stream
 
 https://cplusplus.com/reference/iolibrary/
 

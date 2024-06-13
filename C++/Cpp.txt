@@ -235,7 +235,7 @@ https://cplusplus.com/reference/vector/vector/
 
 .find
 
-Print : 
+Print a vector of pair : 
 
 for (std::vector<std::pair<int, int> >::iterator it = _vector.begin(); it != _vector.end(); it++)
 		std::cout << it->first << " ";
@@ -254,7 +254,7 @@ for (std::map<T, T>::iterator it = _database.begin(); it != _database.end(); ++i
 
 Ne marche pas directement avec la methode .find:
 
-std::map<std::string, double>::const_iterator it = database.find(date); OK
+std::map<std::string, double>::const_iterator it = database.find(date); OK??
 
 std::map<std::string, double>::iterator it = std::find(database.begin(), database.end(), date); X
 
@@ -313,7 +313,7 @@ c) ostream:
 
 I) List include utils :
 
-<iostream> : stream variable
+<iostream> : stream variable + std::
 
 <stdexcept> : catch, try, throw, exception class
 

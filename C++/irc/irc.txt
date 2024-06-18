@@ -93,7 +93,8 @@ This is useful in scenarios like network programming, where you want to manage m
 
 Struct pollfd:
 
-struct pollfd {
+struct pollfd 
+{
     int   fd;         /* Descripteur de fichier */
     short events;     /* Événements attendus    */
     short revents;    /* Événements détectés    */
@@ -107,6 +108,9 @@ Like socket~~ but for the client
 10) recv()
 
 Lis les connections des clients 
+
+valread == 0 : client is leaving must close
+
 
 11) Destructor and/vs remove_client
 

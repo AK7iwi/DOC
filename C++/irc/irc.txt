@@ -102,16 +102,28 @@ struct pollfd {
 
 9) accept()
 
-Comme socket~~
-
+Like socket~~ but for the client 
 
 10) recv()
 
 Lis les connections des clients 
 
+11) Destructor and/vs remove_client
+
+In the Destructor:
+
+You close all file descriptors to free up system resources.
+You delete all dynamically allocated Client objects to free up heap memory.
+You clear the containers to ensure that the destructors of these containers do not attempt to free already freed resources.
+
+In remove_client:
+
+You close the client's socket to free up the file descriptor.
+You delete the Client object to free up heap memory associated with the client.
+You remove the client's file descriptor from _fds to maintain the integrity of the _fds vector.
+
 
 Client:
-
 
 Commands:
 

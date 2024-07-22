@@ -151,3 +151,60 @@ typedef struct	s_data
 9) Netpractice 
 
 https://github.com/lpaube/NetPractice
+
+
+MI:
+
+Parsing :
+
+1) Tokenisation
+
+Voir comment fonctionne un shell?
+https://github.com/Hqndler/42-minishell
+Quels sont les tokens?
+Classer par token (chaque token aura sa propre liste chainee ou tableau).
+
+2) AST 
+
+Algo par rapport a la  syntaxe, se renseigner sur la grammaire shell et les cmds
+
+Exec :
+
+Prompt
+
+Working History
+
+• Handle ’ (single quote) which should prevent the shell from interpreting the metacharacters in the quoted sequence.
+• Handle " (double quote) which should prevent the shell from interpreting the metacharacters in the quoted sequence except for $ (dollar sign).
+
+• Implement redirections
+
+Handle environment variables
+
+Handle $?
+
+Signaux 
+
+Handle ctrl-C, ctrl-D and ctrl-\ which should behave like in bash.
+• In interactive mode:
+◦ ctrl-C displays a new prompt on a new line.
+◦ ctrl-D exits the shell.
+◦ ctrl-\ does nothing.
+
+Builtins:
+
+echo
+cd 
+pwd
+export
+env
+unset
+exit
+ls???
+Autre builtins a faire?
+
+Implement pipes
+
+https://github.com/Hqndler/42-minishell
+
+

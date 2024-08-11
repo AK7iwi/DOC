@@ -8,26 +8,33 @@ Why do I have to "git push --set-upstream origin <branch>" for a new branch the 
 
 https://stackoverflow.com/questions/37770467/why-do-i-have-to-git-push-set-upstream-origin-branch
 
+
 Supprimer une branche local ou distante 
 
 https://www.sebastien-gandossi.fr/blog/git-supprimer-une-branche-locale-ou-distante
 
-Merge : 
+
+a) Merge : 
 
 Git sheetcheat 
 
-Rewrite a commit: 
+b) Rewrite a commit: 
 
 git commit --amend
 git push -f (if the commit is already push)
 
-Description: 
+c) Description: 
 
 There is also another straight and more clear way
 
 git commit -m "Title" -m "Description ..........";
 
-Norme commit :
+d) restore file to the previous commit 
+
+The all project : git restore . 
+A folder : git restore /folder 
+
+x)Norme commit :
 
 feat(graphics): this and
 fix 

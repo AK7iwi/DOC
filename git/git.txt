@@ -13,7 +13,7 @@ Supprimer une branche local ou distante
 
 https://www.sebastien-gandossi.fr/blog/git-supprimer-une-branche-locale-ou-distante
 
-
+$ git push [origin] --delete [nom-de-ma-branche]
 a) Merge : 
 
 Git sheetcheat 

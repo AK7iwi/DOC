@@ -1,0 +1,22 @@
+What is errno?
+errno is a global variable defined in <errno.h>. It is used by system calls and library functions to indicate what error occurred when a function fails.
+Its value is set by certain functions when they encounter an error. If the function succeeds, errno is typically set to 0.
+Importantly, errno is not reset by every function call. Instead, it retains the error code from the last failed operation.
+How Does errno Work?
+Set by Function: When a function encounters an error, it sets errno to an error code that corresponds to the type of error. For example, if open() fails to open a file because the file does not exist, it sets errno to ENOENT.
+
+Global Variable: errno is a global variable, meaning it can be accessed from any part of the program. However, its value can be changed by any subsequent function call that sets it.
+
+Check errno: After calling a function that may set errno, you can check its value to determine what went wrong. It’s important to check errno only after a function that can fail has been called.
+
+Using perror
+The perror function uses the value of errno to print a descriptive error message to stderr. Here’s how it works:
+
+Function Declaration:
+
+void perror(const char *s);
+How perror Works:
+
+When you call perror("some message"), it first checks the current value of errno.
+If errno is not 0, it prints the string you provided (e.g., "some message"), followed by a colon and a space, and then a descriptive error message that corresponds to the value of errno.
+The descriptive message is fetched from a predefined list of error messages that corresponds to the error codes.

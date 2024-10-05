@@ -1,0 +1,40 @@
+Minishell:
+
+a) getcwd: 
+
+man: http://manpagesfr.free.fr/man/man3/getcwd.3.html
+
+Function Prototype:
+
+char *getcwd(char *buf, size_t size);
+
+Parameters:
+
+buf: A pointer to a buffer where the current working directory will be stored. If you pass NULL, getcwd will allocate the buffer for you.
+size: The size of the buffer. If you pass 0, getcwd will automatically allocate sufficient memory to hold the path.
+
+Return Value:
+
+On success, it returns a pointer to the buffer containing the current working directory.
+On failure, it returns NULL, and you can use errno to determine the error.
+
+b) chdir:
+
+The chdir() function in C is used to change the current working directory of the calling process.
+
+int chdir(const char *path);
+
+Parameters:
+path: A string representing the path to the directory you want to change to. 
+This can be an absolute path (starting from / in Unix-like systems) or a relative path (starting from the current directory).
+
+Return Value:
+On success, chdir() returns 0, meaning the current working directory has been changed to the specified path.
+On failure, it returns -1 and sets the global variable errno to indicate the error.
+
+Common Errors (errno values):
+ENOENT: The specified path does not exist.
+ENOTDIR: A component of the path is not a directory.
+EACCES: You do not have permission to access the directory.
+EIO: An I/O error occurred.
+

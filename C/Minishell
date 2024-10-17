@@ -1,5 +1,11 @@
 Minishell:
 
+1)explication
+2)proto
+3)EXpaination about parameter
+4)Return value/error
+5)exemple
+
 a) getcwd: 
 
 man: http://manpagesfr.free.fr/man/man3/getcwd.3.html
@@ -18,14 +24,17 @@ Return Value:
 On success, it returns a pointer to the buffer containing the current working directory.
 On failure, it returns NULL, and you can use errno to determine the error.
 
-b) chdir:
+b) getenv
+
+c) chdir:
 
 The chdir() function in C is used to change the current working directory of the calling process.
 
 int chdir(const char *path);
 
 Parameters:
-path: A string representing the path to the directory you want to change to. 
+path: 
+A string representing the path to the directory you want to change to. 
 This can be an absolute path (starting from / in Unix-like systems) or a relative path (starting from the current directory).
 
 Return Value:
@@ -37,4 +46,113 @@ ENOENT: The specified path does not exist.
 ENOTDIR: A component of the path is not a directory.
 EACCES: You do not have permission to access the directory.
 EIO: An I/O error occurred.
+
+d)execve
+
+The execve function is a crucial system call in Unix-like operating systems used to execute a program. 
+It replaces the current process image with a new process image, effectively loading a new executable file into the current process's memory space
+
+int execve(const char *pathname, char *const argv[], char *const envp[]);
+
+Parameters
+
+pathname:
+This is a string that specifies the path to the executable file you want to run. It can be an absolute path (e.g., /usr/bin/ls) or a relative path (e.g., ./my_program).
+
+argv:
+This is an array of strings representing the command-line arguments passed to the program being executed. The first element (i.e., argv[0]) is conventionally the name of the program itself, followed by any additional arguments. The array must be terminated with a NULL pointer.
+
+envp:
+This is an array of strings representing the environment variables for the new program. Like argv, it must be terminated with a NULL pointer. If you want to pass the environment variables from the current process, you can typically use environ, which is a global variable that holds the current environment.
+
+Return Value
+On Success: execve does not return to the calling program. Instead, if it is successful, the new program starts executing and the original program is completely replaced.
+On Failure: If execve fails (e.g., the file does not exist or is not executable), it returns -1, and errno is set to indicate the error. Common errno values include:
+ENOENT: No such file or directory (the specified executable does not exist).
+EACCES: Permission denied (the file exists but cannot be executed due to permission issues).
+EINVAL: Invalid argument (e.g., the executable is not a valid binary).
+
+Important Points
+Replacement of Process Image: When execve is called, the current process is replaced by the new program. 
+This means all the data in the current process, including the code and stack, is wiped out. Only the process ID remains the same.
+
+No Return on Success: Since execve replaces the current process, if it is successful, the lines of code after it do not execute. 
+You usually check for errors after the execve call.
+
+Environment Variables: You can pass environment variables that the new program can use.
+If you do not need to modify the environment, you can pass the current process's environment using environ.
+
+e)access
+
+In many programs, especially shells, access() is used to check whether a command is both found in a directory (e.g., /bin, /usr/bin) and executable before attempting to run it with execve().
+
+int access(const char *pathname, int mode);
+
+pathname (const char *):
+The path to the file or directory whose access you want to check. This can be either an absolute or a relative path.
+
+mode (int):
+This specifies the type of access you are checking for. You can combine several flags using the bitwise OR (|) operator. 
+The available modes are:
+
+F_OK: Checks if the file exists.
+R_OK: Checks if the file is readable.
+W_OK: Checks if the file is writable.
+X_OK: Checks if the file is executable.
+
+f)fork
+
+The fork() function in C is used to create a new process by duplicating the calling (parent) process. 
+The new process created by fork() is called the child process, and it runs concurrently with the parent. 
+Both the parent and child processes continue executing the code following the fork() call, but they have different process IDs and are independent of each other.
+
+How fork() works:
+
+Parent Process:
+
+The original process that calls fork() is referred to as the parent process.
+
+Child Process:
+A new process (child) is created, which is a copy of the parent process. The child process gets its own process ID (PID), and its parent is the original process.
+
+Return Values of fork():
+In the parent process: fork() returns the PID of the child process (a positive integer).
+In the child process: fork() returns 0.
+
+On error: 
+fork() returns -1, and no child process is created. An error like this typically occurs if there are no more resources available to create a new process (e.g., if the system has reached the limit on the number of processes).
+
+g) waitpid
+
+waitpid() is a system call in C that allows a process (typically the parent) to wait for a specific child process (or any child process) to finish execution and retrieve its exit status
+
+pid_t waitpid(pid_t pid, int *status, int options);
+
+Parameters:
+
+pid (pid_t):
+Specifies which child process the parent is waiting for.
+Possible values:
+> 0: Wait for the specific child process with the given pid.
+-1: Wait for any child process (equivalent to wait()).
+0: Wait for any child process in the same process group as the parent.
+< -1: Wait for any child process in the specific process group -pid.
+
+status (int *):
+A pointer to an integer where the exit status of the child process will be stored. 
+This status can be further inspected using macros like WIFEXITED(), WEXITSTATUS(), WIFSIGNALED(), etc.
+
+options (int):
+Modifies the behavior of waitpid(). Common options include:
+
+0: Default behavior (wait until the child process terminates).
+WNOHANG: Return immediately if no child has exited (non-blocking).
+WUNTRACED: Return if a child process has stopped (but not terminated) due to signals like SIGSTOP.
+WCONTINUED: Return if a stopped child process has been resumed by SIGCONT.
+
+Return Value:
+> 0: Returns the process ID (pid) of the child that changed state.
+0: If WNOHANG is specified and no child process has exited, waitpid() returns 0.
+-1: If an error occurs, -1 is returned, and errno is set appropriately.
+
 

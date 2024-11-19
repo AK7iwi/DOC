@@ -1,0 +1,45 @@
+Pipe
+
+
+I) Pipe
+
+
+The pipe() function in Unix and Linux systems is used for inter-process communication (IPC).
+It creates a unidirectional data channel that can be used for one process to send data to another
+
+int pipe(int pipefd[2]);
+
+Parameters:
+
+pipefd[2]: This is an array of two integers where pipefd[0] is the file descriptor for the read end of the pipe, and pipefd[1] is the file descriptor for the write end.
+
+How the Pipe Works:
+When you call pipe(), the system creates a pair of file descriptors: one for reading and one for writing. These file descriptors represent two ends of the pipe.
+pipefd[0] is used to read data from the pipe.
+pipefd[1] is used to write data to the pipe.
+
+Return Value:
+
+0 on success.
+-1 on failure, and errno is set to indicate the error.
+
+II) dup2 
+
+The dup2() function in Unix and Linux systems is used to duplicate a file descriptor and redirect one file descriptor to another. 
+It plays an essential role in processes like redirecting input/output, particularly when dealing with inter-process communication and executing commands in a shell.
+
+int dup2(int oldfd, int newfd);
+
+oldfd: The file descriptor you want to duplicate (i.e., the original source).
+newfd: The file descriptor you want oldfd to be duplicated to (i.e., the destination). If newfd is already open, it will be closed first.
+
+Purpose:
+
+dup2() duplicates the file descriptor oldfd and makes newfd refer to the same file or resource as oldfd.
+This is commonly used to redirect stdin, stdout, or stderr in processes by duplicating them to a file descriptor for pipes or files.
+Return Value:
+On success, dup2() returns newfd.
+On failure, -1 is returned, and errno is set to indicate the error.
+Key Points:
+If newfd is already open, it will be closed first, unless newfd is the same as oldfd. In that case, dup2() does nothing and returns newfd.
+After dup2(), both oldfd and newfd refer to the same underlying resource (file, pipe, etc.), and either can be used to read from or write to that resource

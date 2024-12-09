@@ -1,0 +1,7 @@
+Config VM (Virtual Box): 
+
+su root
+Install git : sudo apt install git
+Install curl : sudo apt install curl
+Install zsh, install ohmyzsh : https://ohmyz.sh/
+

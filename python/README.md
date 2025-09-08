@@ -115,6 +115,7 @@ fruits = {"apple", "banana", "orange"}
 
 # Access
 # Sets are not indexed - cannot access by position
+# Use list() to convert if access needed or 
 # Use iteration: for fruit in fruits:
 for fruit in fruits:
     print(fruit)  # Prints each fruit (order may vary) "apple", "banana", "orange" or "banana", "orange", "apple" (unordered)
@@ -130,7 +131,7 @@ fruits.discard("banana")     # Remove element (no error if not found)  {"apple",
 fruits.pop()                # Remove and return arbitrary element (returns removed element)
 
 # Duplicate
-# Set can't have duplicate element/automatically remove
+# Automatically remove
 duplicate_set = {1, 2, 2, 3, 3, 4, 5}
 print(duplicate_set)         # {1, 2, 3, 4, 5} (duplicates automatically removed)
 print(len(duplicate_set))    # 5 (counts unique elements only)

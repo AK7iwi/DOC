@@ -18,6 +18,66 @@ In Python, there's a distinction:
 
 ---
 
-- keyword/synthax
+## Theory point/Concept
 
-- important Built-in
+### Basic Data types
+
+I) List
+
+- Explanation 
+
+- Basic synthax
+
+- Exemple
+
+II) Tuple
+
+- Explanation 
+
+- Basic synthax
+
+- Exemple
+
+III) Set
+
+- Explanation 
+
+- Basic synthax
+
+- Exemple
+
+IV) Dict
+
+- Explanation 
+
+- Basic synthax
+
+- Exemple
+
+
+### F-string 
+
+
+### lambda
+
+
+## Basic built-in function, keyword, variable
+
+### def 
+
+### if/elif/else
+
+### for
+
+### while
+
+### import
+
+### try/catch, except
+
+### print()
+
+### return()
+
+
+

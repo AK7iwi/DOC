@@ -26,7 +26,7 @@ In Python, there's a distinction:
 
 ### I) Basic Data types
 
-A) **List**
+**A) List**
 
 Ordered, mutable collection that allows duplicate elements.
 
@@ -62,7 +62,7 @@ print(len(duplicate_list))   # 5 (counts all elements including duplicates)
 print(duplicate_list.count("apple"))  # 2 (counts occurrences of "apple")
 ```
 
-B) **Tuple**
+**B) Tuple**
 
 Ordered, immutable collection that allows duplicate elements.
 
@@ -102,7 +102,7 @@ print(duplicate_tuple.count("apple"))  # 2 (counts occurrences of "apple")
 print(duplicate_tuple.index("banana")) # 1 (returns first occurrence index)
 ```
 
-C) **Set**
+**C) Set**
 
 Unordered, mutable collection of unique elements.
 
@@ -149,7 +149,7 @@ print(duplicate_set)         # {1, 2, 3, 4, 5} (duplicates automatically removed
 print(len(duplicate_set))    # 5 (counts unique elements only)
 ```
 
-D) **Dictionary**
+**D) Dictionary**
 
 Unordered, mutable collection of key-value pairs.
 

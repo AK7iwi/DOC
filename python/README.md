@@ -248,7 +248,10 @@ print(message)
 
 ### III) Different types of NULL
 
-**a) None value**: `None` represents absence of value (like NULL in C)
+**a) None value**
+
+`None` represents absence of value (like NULL in C)
+
 ```python
 # None examples
 def find_user(user_id):
@@ -265,7 +268,10 @@ name = None
 print(name)  # None
 ```
 
-**b) NaN (Not a Number)**: `float("NaN")` creates a special float value
+**b) NaN (Not a Number)**
+
+`float("NaN")` creates a special float value
+
 ```python
 # NaN examples
 import math
@@ -284,7 +290,10 @@ if math.isnan(value):
     print("This is NaN")
 ```
 
-**c) Boolean False**: `False` as a null-like value
+**c) Boolean False**
+
+`False` as a null-like value
+
 ```python
 # Boolean False examples
 def check_permission(user):
@@ -304,7 +313,10 @@ else:
     print("Flag is False")
 ```
 
-**d) Zero as null**: Integer `0` representing empty/nothing
+**d) Zero as null**
+
+Integer `0` representing empty/nothing
+
 ```python
 # Zero as null examples
 def count_items(items):
@@ -323,7 +335,10 @@ for price in [10, 20, 30]:
 print(f"Total: {total}")  # Total: 60
 ```
 
-**e) Empty string**: `""` representing no text
+**e) Empty string**
+
+`""` representing no text
+
 ```python
 # Empty string examples
 def get_username():
@@ -354,6 +369,12 @@ result = "" + "Hello"  # "Hello"
 5. **Empty string** - Use `== ""` or `not string` to check (empty strings are falsy)
 
 ### IV) lambda
+
+
+
+
+
+
 
 <div align="center">
 

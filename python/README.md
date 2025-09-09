@@ -86,8 +86,13 @@ print(colors[-1])      # "blue"
 # coordinates[0] = 15  # TypeError: 'tuple' object does not support item assignment
 
 # Add/Remove
-# Tuples are immutable - cannot add or remove elements
-# Use list() to convert if modification needed
+# Tuples are immutable - cannot add or remove elements 
+# Need to recreate a tuple or 
+# use list() to convert if modification (modify,add,remove) needed
+tuple_data = (1, 2, 3)
+list_data = list(tuple_data)  # Convert to list
+list_data.append(4)           # Add element
+new_tuple = tuple(list_data)  # Convert back to tuple: (1, 2, 3, 4)
 
 # Allows duplicates example
 duplicate_tuple = ("apple", "banana", "apple", "orange", "banana")
@@ -115,14 +120,21 @@ fruits = {"apple", "banana", "orange"}
 
 # Access
 # Sets are not indexed - cannot access by position
-# Use list() to convert if access needed or 
-# Use iteration: for fruit in fruits:
+# Use list() to convert if access needed
+fruits = {"apple", "banana", "orange"}
+fruits_list = list(fruits)    # Convert to list
+print(fruits_list[0])         # Access first element (order not guaranteed)
+# Or use iteration:
 for fruit in fruits:
-    print(fruit)  # Prints each fruit (order may vary) "apple", "banana", "orange" or "banana", "orange", "apple" (unordered)
+    print(fruit)  # Prints each fruit (order may vary)
 
 # Modify
 # Sets don't support item assignment
 # fruits[0] = "grape"  # TypeError: 'set' object does not support item assignment
+fruits = {"apple", "banana", "orange"}
+fruits_list = list(fruits)    # Convert to list
+fruits_list[0] = "grape"      # Modify element
+fruits = set(fruits_list)     # Convert back to set: {"grape", "banana", "orange"}
 
 # Add/Remove
 fruits.add("kiwi")           # Add element {"apple", "banana", "orange", "kiwi"}
@@ -130,7 +142,7 @@ fruits.remove("banana")      # Remove element (raises error if not found) {"appl
 fruits.discard("banana")     # Remove element (no error if not found)  {"apple", "orange", "kiwi"}
 fruits.pop()                # Remove and return arbitrary element (returns removed element)
 
-# Duplicate
+# No duplicates example (not "No duplicate keys" - that's for dictionaries)
 # Automatically remove
 duplicate_set = {1, 2, 2, 3, 3, 4, 5}
 print(duplicate_set)         # {1, 2, 3, 4, 5} (duplicates automatically removed)

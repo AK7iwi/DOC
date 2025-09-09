@@ -237,7 +237,7 @@ print(message)
 # City: Paris
 ```
 
-## Key features of F-strings:
+- **Key features of F-strings:**
 
 1. **Simple syntax** - Just prefix with `f` and use `{}` for variables
 2. **Expression evaluation** - Can include calculations and function calls

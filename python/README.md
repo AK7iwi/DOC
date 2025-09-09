@@ -265,6 +265,19 @@ result = greet("Alice")
 print(result)  # Output: Hello, Alice!
 ```
 
+Functions can have type hints to specify parameter and return types:
+
+```python
+def add_numbers(a: int, b: int) -> int:
+    return a + b
+
+def get_name() -> str:
+    return "John"
+
+def process_data(data: list[str]) -> dict[str, int]:
+    return {"count": len(data)}
+```
+
 ### if/elif/else
 
 Conditional statements used to make decisions in code based on conditions.

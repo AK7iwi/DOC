@@ -186,8 +186,64 @@ print(duplicate_keys)        # {"name": "Jane", "age": 30} (last value wins)
 print(len(duplicate_keys))   # 2 (only unique keys counted)
 ```
 
-### F-string 
+### F-string
 
+F-strings (formatted string literals) are a way to embed expressions inside string literals using curly braces `{}`. They provide a concise and readable way to format strings with variables and expressions.
+
+- **Properties:**
+  - Introduced in Python 3.6
+  - Fast and efficient string formatting
+  - Can include variables, expressions, and function calls
+  - More readable than other string formatting methods
+
+- **Syntax/Example:**
+```python
+# Basic usage
+name = "John"
+age = 30
+print(f"Hello, my name is {name} and I am {age} years old")
+# Output: Hello, my name is John and I am 30 years old
+
+# With expressions
+a = 10
+b = 20
+print(f"The sum of {a} and {b} is {a + b}")
+# Output: The sum of 10 and 20 is 30
+
+# With function calls
+import datetime
+now = datetime.datetime.now()
+print(f"Current time: {now.strftime('%Y-%m-%d %H:%M:%S')}")
+# Output: Current time: 2024-01-15 14:30:25
+
+# Formatting numbers
+price = 19.99
+print(f"Price: ${price:.2f}")
+# Output: Price: $19.99
+
+# Multiple lines
+name = "Alice"
+age = 25
+city = "Paris"
+message = f"""
+Name: {name}
+Age: {age}
+City: {city}
+"""
+print(message)
+# Output:
+# Name: Alice
+# Age: 25
+# City: Paris
+```
+
+## Key features of F-strings:
+
+1. **Simple syntax** - Just prefix with `f` and use `{}` for variables
+2. **Expression evaluation** - Can include calculations and function calls
+3. **Formatting options** - Can format numbers, dates, etc.
+4. **Multi-line support** - Can span multiple lines
+5. **Performance** - Faster than other string formatting methods
 
 ### lambda
 
@@ -197,7 +253,9 @@ print(len(duplicate_keys))   # 2 (only unique keys counted)
 
 </div>
 
-### def 
+### def
+
+AAAAA
 
 ### if/elif/else
 
@@ -209,11 +267,19 @@ print(len(duplicate_keys))   # 2 (only unique keys counted)
 
 ### import
 
-### try/catch, except
+AAAA
+
+### try/except, raise
+
+AAAAAA
 
 ### print()
 
+AAAAA
+
 ### return()
+
+AAAAA
 
 
 

@@ -26,7 +26,7 @@ In Python, there's a distinction:
 
 ### I) Basic Data types
 
-**A) List**
+**a) List**
 
 Ordered, mutable collection that allows duplicate elements.
 
@@ -62,7 +62,7 @@ print(len(duplicate_list))   # 5 (counts all elements including duplicates)
 print(duplicate_list.count("apple"))  # 2 (counts occurrences of "apple")
 ```
 
-**B) Tuple**
+**b) Tuple**
 
 Ordered, immutable collection that allows duplicate elements.
 
@@ -102,7 +102,7 @@ print(duplicate_tuple.count("apple"))  # 2 (counts occurrences of "apple")
 print(duplicate_tuple.index("banana")) # 1 (returns first occurrence index)
 ```
 
-**C) Set**
+**c) Set**
 
 Unordered, mutable collection of unique elements.
 
@@ -149,7 +149,7 @@ print(duplicate_set)         # {1, 2, 3, 4, 5} (duplicates automatically removed
 print(len(duplicate_set))    # 5 (counts unique elements only)
 ```
 
-**D) Dictionary**
+**d) Dictionary**
 
 Unordered, mutable collection of key-value pairs.
 
@@ -245,7 +245,115 @@ print(message)
 4. **Multi-line support** - Can span multiple lines
 5. **Performance** - Faster than other string formatting methods
 
-### III) lambda
+
+### III) Different types of NULL
+
+**a) None value**: `None` represents absence of value (like NULL in C)
+```python
+# None examples
+def find_user(user_id):
+    if user_id == 999:
+        return None  # User not found
+    return {"name": "John", "id": user_id}
+
+result = find_user(999)
+if result is None:
+    print("User not found")
+
+# None in variables
+name = None
+print(name)  # None
+```
+
+**b) NaN (Not a Number)**: `float("NaN")` creates a special float value
+```python
+# NaN examples
+import math
+
+nan_value = float("nan")
+print(nan_value)  # nan
+print(math.isnan(nan_value))  # True
+
+# NaN in calculations
+result = float("nan") + 5
+print(result)  # nan
+
+# Checking for NaN
+value = float("nan")
+if math.isnan(value):
+    print("This is NaN")
+```
+
+**c) Boolean False**: `False` as a null-like value
+```python
+# Boolean False examples
+def check_permission(user):
+    if user == "admin":
+        return True
+    return False  # No permission
+
+has_access = check_permission("guest")
+if not has_access:
+    print("Access denied")
+
+# False in conditions
+flag = False
+if flag:
+    print("This won't print")
+else:
+    print("Flag is False")
+```
+
+**d) Zero as null**: Integer `0` representing empty/nothing
+```python
+# Zero as null examples
+def count_items(items):
+    if not items:
+        return 0  # No items
+    return len(items)
+
+count = count_items([])
+if count == 0:
+    print("No items found")
+
+# Zero in calculations
+total = 0
+for price in [10, 20, 30]:
+    total += price
+print(f"Total: {total}")  # Total: 60
+```
+
+**e) Empty string**: `""` representing no text
+```python
+# Empty string examples
+def get_username():
+    user_input = input("Enter username: ")
+    if user_input == "":
+        return "Anonymous"
+    return user_input
+
+name = get_username()
+if name == "":
+    print("No name provided")
+
+# Empty string checks
+text = ""
+if not text:  # Empty string is falsy
+    print("Text is empty")
+
+# String operations
+result = "" + "Hello"  # "Hello"
+```
+
+- **Key points:**
+
+1. **None** - Use `is None` to check, represents absence of value
+2. **NaN** - Use `math.isnan()` to check, result of invalid math operations
+3. **False** - Boolean value, use `not` or `== False` to check
+4. **0** - Numeric zero, use `== 0` to check
+5. **Empty string** - Use `== ""` or `not string` to check (empty strings are falsy)
+
+### IV) lambda
 
 <div align="center">
 
@@ -305,6 +413,43 @@ if "apple" in fruits:
     print("Apple found!")
 # Output: Apple found!
 ```
+
+### is
+
+Identity operator used to check if two variables refer to the same object in memory (not just equal values).
+
+```python
+# Basic usage
+a = [1, 2, 3]
+b = [1, 2, 3]
+c = a
+
+print(a == b)  # True (same values)
+print(a is b)  # False (different objects)
+print(a is c)  # True (same object)
+
+# With None
+x = None
+print(x is None)  # True
+print(x == None)  # True (but 'is' is preferred for None)
+
+# With integers (Python optimizes small integers)
+num1 = 256
+num2 = 256
+print(num1 is num2)  # True (same object due to optimization)
+
+# With larger integers
+num3 = 257
+num4 = 257
+print(num3 is num4)  # False (different objects)
+```
+
+- **Key points about `is`:**
+
+1. **Identity vs Equality** - `is` checks if two variables point to the same object, `==` checks if values are equal
+2. **Memory efficiency** - Python optimizes small integers (-5 to 256) to be the same object
+3. **None checking** - Always use `is None` instead of `== None`
+4. **Object comparison** - Useful for checking if variables reference the same list, dict, or custom object
 
 ### for
 
@@ -378,7 +523,7 @@ def check_age(age):
     return age
 ```
 
-## Key additions:
+- **Key additions:**
 
 1. **`except Exception as e` example** showing how to catch any exception and access error details
 2. **Error details access** - using `e` to get the error message and `type(e).__name__` to get the error type
@@ -397,7 +542,7 @@ print(f"Name: {name}, Age: {age}")
 #         Name: John, Age: 25
 ```
 
-### return
+### return()
 
 Keyword used to return a value from a function and exit the function.
 

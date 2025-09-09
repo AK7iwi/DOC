@@ -352,12 +352,36 @@ try:
 except ZeroDivisionError:
     print("Cannot divide by zero!")
 
+# Using Exception as e to get error details
+try:
+    numbers = [1, 2, 3]
+    print(numbers[5])  # IndexError
+except Exception as e:
+    print(f"An error occurred: {e}")
+    print(f"Error type: {type(e).__name__}")
+# Output: An error occurred: list index out of range
+#         Error type: IndexError
+
+# Multiple exception handling
+try:
+    value = int("abc")
+except ValueError as e:
+    print(f"Value error: {e}")
+except Exception as e:
+    print(f"Other error: {e}")
+
+
 # Custom error
 def check_age(age):
     if age < 0:
         raise ValueError("Age cannot be negative")
     return age
 ```
+
+## Key additions:
+
+1. **`except Exception as e` example** showing how to catch any exception and access error details
+2. **Error details access** - using `e` to get the error message and `type(e).__name__` to get the error type
 
 ### print()
 

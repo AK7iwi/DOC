@@ -576,3 +576,76 @@ print(sum_result)  # Output: 8
 
 ```
 
+#### Function to convert
+
+**a) str()** - Converts any value to a string
+```python
+# str() examples
+number = 42
+print(str(number))  # "42"
+
+price = 19.99
+print(str(price))   # "19.99"
+
+is_valid = True
+print(str(is_valid))  # "True"
+
+# Concatenation
+age = 25
+message = "I am " + str(age) + " years old"
+print(message)  # "I am 25 years old"
+```
+
+**b) int()** - Converts a value to an integer
+```python
+# int() examples
+string_num = "123"
+print(int(string_num))  # 123
+
+float_num = 45.7
+print(int(float_num))   # 45 (truncates decimal)
+
+# With base conversion
+binary = "1010"
+print(int(binary, 2))   # 10 (binary to decimal)
+
+hex_num = "FF"
+print(int(hex_num, 16)) # 255 (hex to decimal)
+```
+
+**c) float()** - Converts a value to a floating-point number
+```python
+# float() examples
+string_num = "3.14"
+print(float(string_num))  # 3.14
+
+integer = 42
+print(float(integer))     # 42.0
+
+# Scientific notation
+sci_num = "1.5e2"
+print(float(sci_num))     # 150.0
+```
+
+**d) list()** - Converts an iterable to a list
+```python
+# list() examples
+string = "hello"
+print(list(string))  # ['h', 'e', 'l', 'l', 'o']
+
+tuple_data = (1, 2, 3)
+print(list(tuple_data))  # [1, 2, 3]
+
+set_data = {4, 5, 6}
+print(list(set_data))    # [4, 5, 6] (order may vary)
+
+# From range
+numbers = list(range(5))
+print(numbers)  # [0, 1, 2, 3, 4]
+```
+
+-**Key points:**
+
+1. **Conversion** - Python provides multiple built-in conversion functions (also called type constructors) to transform data from one type to another. LIst of conversion functions: str(), int(), float(), list(), tuple(), set(), dict(), bool(), bytes() 
+
+

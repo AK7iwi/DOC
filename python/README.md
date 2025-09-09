@@ -245,7 +245,7 @@ print(message)
 4. **Multi-line support** - Can span multiple lines
 5. **Performance** - Faster than other string formatting methods
 
-### lambda
+### III) lambda
 
 <div align="center">
 
@@ -255,44 +255,120 @@ print(message)
 
 ### def
 
-AAAAA
+Keyword used to define functions. Functions are reusable blocks of code that perform specific tasks.
+
+```python
+def greet(name):
+    return f"Hello, {name}!"
+
+result = greet("Alice")
+print(result)  # Output: Hello, Alice!
+```
 
 ### if/elif/else
 
-### in 
+Conditional statements used to make decisions in code based on conditions.
+
+```python
+age = 18
+
+if age < 18:
+    print("Minor")
+elif age == 18:
+    print("Just became adult")
+else:
+    print("Adult")
+# Output: Just became adult
+```
+
+### in
+
+Membership operator used to check if a value exists in a sequence (list, tuple, string, etc.).
+
+```python
+fruits = ["apple", "banana", "orange"]
+
+if "apple" in fruits:
+    print("Apple found!")
+# Output: Apple found!
+```
 
 ### for
 
+Loop keyword used to iterate over sequences (lists, tuples, strings, etc.).
+
+```python
+numbers = [1, 2, 3, 4, 5]
+
+for num in numbers:
+    print(num * 2)
+# Output: 2, 4, 6, 8, 10
+```
+
 ### while
+
+Loop keyword used to repeat code while a condition is true.
+
+```python
+count = 0
+
+while count < 3:
+    print(f"Count: {count}")
+    count += 1
+# Output: Count: 0, Count: 1, Count: 2
+```
 
 ### import
 
-AAAA
+Keyword used to import modules or specific functions from modules.
+
+```python
+import math
+from datetime import date
+
+print(math.sqrt(16))  # Output: 4.0
+print(date.today())   # Output: 2024-01-15
+```
 
 ### try/except, raise
+Error handling keywords. `try/except` catches errors, `raise` creates custom errors.
 
-AAAAAA
+```python
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero!")
+
+# Custom error
+def check_age(age):
+    if age < 0:
+        raise ValueError("Age cannot be negative")
+    return age
+```
 
 ### print()
 
-AAAAA
+Built-in function used to display output to the console.
 
-### return()
+```python
+name = "John"
+age = 25
 
-AAAAA
+print("Hello World!")
+print(f"Name: {name}, Age: {age}")
+# Output: Hello World!
+#         Name: John, Age: 25
+```
 
+### return
 
+Keyword used to return a value from a function and exit the function.
 
-## To improve/add/remove
+```python
+def add_numbers(a, b):
+    result = a + b
+    return result
 
-- Basic Data types
-
-List: 
-
-acces :[1,3]
-
-Set: 
-
-# Convert to list for indexed access
-fruits_list = list(fruits)
-print(fruits_list[0])  # Access first element (but order is not guaranteed)
+sum_result = add_numbers(5, 3)
+print(sum_result)  # Output: 8
+```

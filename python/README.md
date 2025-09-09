@@ -371,18 +371,15 @@ result = "" + "Hello"  # "Hello"
 ### IV) lambda
 
 
-
-
-
-
-
 <div align="center">
 
-## Basic built-in function, keyword, variable
+## Basic and useful built-in function, keyword, variable
 
 </div>
 
-### def
+### I) Keyword
+
+#### def
 
 Keyword used to define functions. Functions are reusable blocks of code that perform specific tasks.
 
@@ -407,7 +404,7 @@ def process_data(data: list[str]) -> dict[str, int]:
     return {"count": len(data)}
 ```
 
-### if/elif/else
+#### if/elif/else
 
 Conditional statements used to make decisions in code based on conditions.
 
@@ -423,7 +420,7 @@ else:
 # Output: Just became adult
 ```
 
-### in
+#### in
 
 Membership operator used to check if a value exists in a sequence (list, tuple, string, etc.).
 
@@ -435,7 +432,7 @@ if "apple" in fruits:
 # Output: Apple found!
 ```
 
-### is
+#### is
 
 Identity operator used to check if two variables refer to the same object in memory (not just equal values).
 
@@ -472,7 +469,7 @@ print(num3 is num4)  # False (different objects)
 3. **None checking** - Always use `is None` instead of `== None`
 4. **Object comparison** - Useful for checking if variables reference the same list, dict, or custom object
 
-### for
+#### for
 
 Loop keyword used to iterate over sequences (lists, tuples, strings, etc.).
 
@@ -484,7 +481,7 @@ for num in numbers:
 # Output: 2, 4, 6, 8, 10
 ```
 
-### while
+#### while
 
 Loop keyword used to repeat code while a condition is true.
 
@@ -497,7 +494,7 @@ while count < 3:
 # Output: Count: 0, Count: 1, Count: 2
 ```
 
-### import
+#### import
 
 Keyword used to import modules or specific functions from modules.
 
@@ -509,7 +506,7 @@ print(math.sqrt(16))  # Output: 4.0
 print(date.today())   # Output: 2024-01-15
 ```
 
-### try/except, raise
+#### try/except, raise
 Error handling keywords. `try/except` catches errors, `raise` creates custom errors.
 
 ```python
@@ -549,7 +546,9 @@ def check_age(age):
 1. **`except Exception as e` example** showing how to catch any exception and access error details
 2. **Error details access** - using `e` to get the error message and `type(e).__name__` to get the error type
 
-### print()
+### II) Built-in
+
+#### print
 
 Built-in function used to display output to the console.
 
@@ -563,7 +562,7 @@ print(f"Name: {name}, Age: {age}")
 #         Name: John, Age: 25
 ```
 
-### return()
+#### return
 
 Keyword used to return a value from a function and exit the function.
 
@@ -574,4 +573,6 @@ def add_numbers(a, b):
 
 sum_result = add_numbers(5, 3)
 print(sum_result)  # Output: 8
+
 ```
+

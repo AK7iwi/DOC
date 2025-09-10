@@ -619,7 +619,46 @@ print(sum_result)  # Output: 8
 
 #### type
 
+Built-in function that returns the type of an object. Useful for checking what kind of data you're working with.
+
+```python
+name = "John"
+age = 25
+scores = [85, 90, 78]
+
+print(type(name))    # <class 'str'>
+print(type(age))     # <class 'int'>
+print(type(scores))  # <class 'list'>
+
+# Type checking
+if type(name) == str:
+    print("name is a string")
+
+# With variables
+data = 42.5
+print(f"data is of type: {type(data)}")  # data is of type: <class 'float'>
+```
+
 #### len
+
+Built-in function that returns the length (number of items) of an object like strings, lists, tuples, dictionaries, etc.
+
+```python
+# len() examples
+text = "Hello"
+numbers = [1, 2, 3, 4, 5]
+person = {"name": "John", "age": 30}
+
+print(len(text))     # 5 (number of characters)
+print(len(numbers))  # 5 (number of elements)
+print(len(person))   # 2 (number of key-value pairs)
+
+# Practical usage
+fruits = ["apple", "banana", "orange"]
+if len(fruits) > 0:
+    print(f"We have {len(fruits)} fruits")
+# Output: We have 3 fruits
+```
 
 #### Function to convert
 
@@ -692,6 +731,3 @@ print(numbers)  # [0, 1, 2, 3, 4]
 - **Key points:**
 
 1. **Conversion** - Python provides multiple built-in conversion functions (also called type constructors) to transform data from one type to another. List of conversion functions: `str()`, `int()`, `float()`, `list()`, `tuple()`, `set()`, `dict()`, `bool()`, `bytes()` 
-
-
-#### `%`

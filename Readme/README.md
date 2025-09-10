@@ -47,7 +47,7 @@ Result:
 
 c) Create a var for link if need to reuse
 
-`[link_name]: link`
+`[link_name]: link_var`
 
 ```markdown
 

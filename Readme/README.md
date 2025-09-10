@@ -49,7 +49,7 @@ This is line one
 
 This is line two
 
-c) HTML <br> tag
+c) HTML `<br>` tag
 
 ```marwdown
 This is line one<br>

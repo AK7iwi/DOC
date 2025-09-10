@@ -1,5 +1,7 @@
 
-## I) To center text, can use HTML directly in the README:
+## I) How to center a text
+
+You can use HTML directly in the README
 
 ```markdown
 <div align="center">
@@ -19,7 +21,48 @@ Result:
 </div>
 
 
-## II) Add a link
+## II) How to break line?
+
+a) Two spaces at the end of a line
+
+```marwdown
+This is line one  
+This is line two
+```
+
+Result:
+
+This is line one  
+This is line two
+
+b) Method 2: Two line breaks (paragraph break)
+
+```marwdown
+This is line one
+
+This is line two
+```
+
+Result:
+
+This is line one
+
+This is line two
+
+c) HTML <br> tag
+
+```marwdown
+This is line one<br>
+This is line two
+```
+
+Result:
+
+This is line one<br>
+This is line two
+
+
+## III) How to add a link?
 
 a) Add link to words:
 

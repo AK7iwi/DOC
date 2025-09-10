@@ -396,9 +396,9 @@ if len(sys.argv) > 2:
 
 - **Key points:**
 
-- **sys.argv[0]** - Always the script name
-- **sys.argv[1:]** - Command-line arguments passed to the script
-- **len(sys.argv)** - Total number of arguments (including script name)
+1. **sys.argv[0]** - Always the script name
+2. **sys.argv[1:]** - Command-line arguments passed to the script
+3. **len(sys.argv)** - Total number of arguments (including script name)
 
 ### V) lambda
 
@@ -464,7 +464,7 @@ if "apple" in fruits:
 # Output: Apple found!
 ```
 
-#### is
+#### is (+not)
 
 Identity operator used to check if two variables refer to the same object in memory (not just equal values).
 
@@ -483,6 +483,22 @@ x = None
 print(x is None)  # True
 print(x == None)  # True (but 'is' is preferred for None)
 
+# With 'not' operator
+result = None
+if result is not None:
+    print("Result has a value")
+else:
+    print("Result is None")
+
+# Practical example with 'not'
+def process_data(data):
+    if data is not None:
+        return f"Processing: {data}"
+    return "No data to process"
+
+print(process_data("Hello"))  # Processing: Hello
+print(process_data(None))     # No data to process
+
 # With integers (Python optimizes small integers)
 num1 = 256
 num2 = 256
@@ -492,14 +508,17 @@ print(num1 is num2)  # True (same object due to optimization)
 num3 = 257
 num4 = 257
 print(num3 is num4)  # False (different objects)
+
+
 ```
 
 - **Key points about `is`:**
 
 1. **Identity vs Equality** - `is` checks if two variables point to the same object, `==` checks if values are equal
-2. **Memory efficiency** - Python optimizes small integers (-5 to 256) to be the same object
-3. **None checking** - Always use `is None` instead of `== None`
-4. **Object comparison** - Useful for checking if variables reference the same list, dict, or custom object
+2. **`is not`** - Negates the identity check, useful for checking if something is NOT None
+3. **Memory efficiency** - Python optimizes small integers (-5 to 256) to be the same object
+4. **None checking** - Always use `is None` or `is not None` instead of `== None`
+5. **Object comparison** - Useful for checking if variables reference the same list, dict, or custom object
 
 #### for
 

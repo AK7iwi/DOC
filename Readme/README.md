@@ -35,7 +35,7 @@ Result:
 This is line one  
 This is line two
 
-b) Method 2: Two line breaks (paragraph break)
+b) Two line breaks (paragraph break)
 
 ```marwdown
 This is line one
@@ -61,11 +61,17 @@ Result:
 This is line one<br>
 This is line two
 
+d) If you dont' use these methods:
 
-Test: 
+```markdown
 This is line one
 This is line two
+```
 
+Result:
+
+This is line one
+This is line two
 
 ## III) How to add a link?
 

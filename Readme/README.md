@@ -10,6 +10,16 @@
 
 ```
 
+Result:
+
+
+<div align="center">
+
+## MODULE 00 - Starting
+
+</div>
+
+
 ## II) Add a link
 
 a) Add link to words:
@@ -21,6 +31,8 @@ a) Add link to words:
 ```
 
 Result:
+
+
 [Markdown's Wikipedia](https://fr.wikipedia.org/wiki/Markdown)
 
 b) Add link with description:
@@ -32,6 +44,7 @@ b) Add link with description:
 ```
 
 Result:
+
 
 [Markdown's Wikipedia](https://fr.wikipedia.org/wiki/Markdown) - Wikipedia Page of Warkdown 
 
@@ -48,6 +61,7 @@ c) Create a var for link if need to reuse
 ```
 
 Result:
+
 
 [Markdown's Wikipedia 1][Markdown's Wikipedia]
 [Markdown's Wikipedia 2][Markdown's Wikipedia]

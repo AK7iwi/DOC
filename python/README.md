@@ -369,8 +369,36 @@ result = "" + "Hello"  # "Hello"
 
 ### IV) sys.argv
 
+A list that contains command-line arguments passed to a Python script. The first element (`sys.argv[0]`) is always the script name.
 
+```python
+import sys
 
+# Basic usage
+print("Script name:", sys.argv[0])
+print("Number of arguments:", len(sys.argv))
+print("All arguments:", sys.argv)
+
+# Access specific arguments
+if len(sys.argv) > 1:
+    print("First argument:", sys.argv[1])
+if len(sys.argv) > 2:
+    print("Second argument:", sys.argv[2])
+
+# Example: python script.py hello world
+# Output:
+# Script name: script.py
+# Number of arguments: 3
+# All arguments: ['script.py', 'hello', 'world']
+# First argument: hello
+# Second argument: world
+```
+
+- **Key points:**
+
+- **sys.argv[0]** - Always the script name
+- **sys.argv[1:]** - Command-line arguments passed to the script
+- **len(sys.argv)** - Total number of arguments (including script name)
 
 ### V) lambda
 
@@ -528,7 +556,7 @@ except Exception as e:
     print(f"An error occurred: {e}")
     print(f"Error type: {type(e).__name__}")
 # Output: An error occurred: list index out of range
-#         Error type: IndexError
+# Error type: IndexError
 
 # Multiple exception handling
 try:
@@ -549,7 +577,6 @@ try:
     check_age(-1)
 except ValueError as e: 
     print(e)
-
 # `Exception` instead of `ValueError` work also but less precis
 ```
 
@@ -667,3 +694,4 @@ print(numbers)  # [0, 1, 2, 3, 4]
 1. **Conversion** - Python provides multiple built-in conversion functions (also called type constructors) to transform data from one type to another. List of conversion functions: `str()`, `int()`, `float()`, `list()`, `tuple()`, `set()`, `dict()`, `bool()`, `bytes()` 
 
 
+#### `%`

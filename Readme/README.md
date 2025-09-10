@@ -1,18 +1,18 @@
 
-## I) How to center a text
+## I) How to center a text?
 
 You can use HTML directly in the README
 
 ```markdown
 <div align="center">
 
-## MODULE 00 - Starting
+### MODULE 00 - Starting
 
 </div>
 
 ```
 
-Result:  
+**Result:**
 
 <div align="center">
 
@@ -30,7 +30,7 @@ This is line one
 This is line two
 ```
 
-Result:
+**Result:**
 
 This is line one  
 This is line two
@@ -43,7 +43,7 @@ This is line one
 This is line two
 ```
 
-Result:
+**Result:**
 
 This is line one
 
@@ -56,19 +56,19 @@ This is line one<br>
 This is line two
 ```
 
-Result:
+**Result:**
 
 This is line one<br>
 This is line two
 
-d) If you dont' use these methods:
+d) If you don't use these methods:
 
 ```markdown
 This is line one
 This is line two
 ```
 
-Result:
+**Result:**
 
 This is line one
 This is line two
@@ -83,7 +83,7 @@ a) Add link to words:
 [Markdown's Wikipedia](https://fr.wikipedia.org/wiki/Markdown)
 ```
 
-Result:   
+**Result:**
 
 [Markdown's Wikipedia](https://fr.wikipedia.org/wiki/Markdown)
 
@@ -95,13 +95,13 @@ b) Add link with description:
 [Markdown's Wikipedia](https://fr.wikipedia.org/wiki/Markdown) - Wikipedia Page of Warkdown
 ```
 
-Result:  
+**Result:**
 
 [Markdown's Wikipedia](https://fr.wikipedia.org/wiki/Markdown) - Wikipedia Page of Warkdown 
 
-c) Create a var for link if need to reuse
+c) Create a variable for link if need to reuse
 
-`[link_name]: link_var`
+`[link_var]: link`
 
 ```markdown
 
@@ -111,7 +111,7 @@ c) Create a var for link if need to reuse
 [Markdown's Wikipedia]: https://fr.wikipedia.org/wiki/Markdown
 ```
 
-Result:  
+**Result:**
 
 [Markdown's Wikipedia 1][Markdown's Wikipedia]
 [Markdown's Wikipedia 2][Markdown's Wikipedia]

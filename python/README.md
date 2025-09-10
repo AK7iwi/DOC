@@ -567,6 +567,14 @@ except ZeroDivisionError:
     print("Cannot divide by zero!")
 # `Exception` instead of `ZeroDivisionError` work also but less precis
 
+
+# Check if argument is an integer
+try:
+    number = int(arg)
+except ValueError:
+    raise AssertionError("argument is not an integer")
+
+
 # Using Exception as e to get error details
 try:
     numbers = [1, 2, 3]

@@ -10,8 +10,7 @@
 
 ```
 
-Result:
-
+Result:  
 
 <div align="center">
 
@@ -30,8 +29,7 @@ a) Add link to words:
 [Markdown's Wikipedia](https://fr.wikipedia.org/wiki/Markdown)
 ```
 
-Result:
-
+Result:   
 
 [Markdown's Wikipedia](https://fr.wikipedia.org/wiki/Markdown)
 
@@ -43,8 +41,7 @@ b) Add link with description:
 [Markdown's Wikipedia](https://fr.wikipedia.org/wiki/Markdown) - Wikipedia Page of Warkdown
 ```
 
-Result:
-
+Result:  
 
 [Markdown's Wikipedia](https://fr.wikipedia.org/wiki/Markdown) - Wikipedia Page of Warkdown 
 
@@ -60,8 +57,7 @@ c) Create a var for link if need to reuse
 [Markdown's Wikipedia]: https://fr.wikipedia.org/wiki/Markdown
 ```
 
-Result:
-
+Result:  
 
 [Markdown's Wikipedia 1][Markdown's Wikipedia]
 [Markdown's Wikipedia 2][Markdown's Wikipedia]

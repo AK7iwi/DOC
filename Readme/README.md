@@ -1,5 +1,5 @@
 
-I) To center text, can use HTML directly in the README:
+## I) To center text, can use HTML directly in the README:
 
 ```markdown
 <div align="center">
@@ -10,7 +10,7 @@ I) To center text, can use HTML directly in the README:
 
 ```
 
-II) Add a link
+## II) Add a link
 
 a) Add link to words:
 

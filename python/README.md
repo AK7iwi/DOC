@@ -368,7 +368,12 @@ result = "" + "Hello"  # "Hello"
 4. **0** - Numeric zero, use `== 0` to check
 5. **Empty string** - Use `== ""` or `not string` to check (empty strings are falsy)
 
-### IV) lambda
+### IV) sys.argv
+
+
+
+
+### V) lambda
 
 
 <div align="center">
@@ -541,7 +546,7 @@ def check_age(age):
     return age
 ```
 
-- **Key additions:**
+- **Key additions about try\except:**
 
 1. **`except Exception as e` example** showing how to catch any exception and access error details
 2. **Error details access** - using `e` to get the error message and `type(e).__name__` to get the error type
@@ -575,6 +580,10 @@ sum_result = add_numbers(5, 3)
 print(sum_result)  # Output: 8
 
 ```
+
+#### type
+
+#### len
 
 #### Function to convert
 
@@ -644,8 +653,8 @@ numbers = list(range(5))
 print(numbers)  # [0, 1, 2, 3, 4]
 ```
 
--**Key points:**
+- **Key points:**
 
-1. **Conversion** - Python provides multiple built-in conversion functions (also called type constructors) to transform data from one type to another. LIst of conversion functions: str(), int(), float(), list(), tuple(), set(), dict(), bool(), bytes() 
+1. **Conversion** - Python provides multiple built-in conversion functions (also called type constructors) to transform data from one type to another. List of conversion functions: `str()`, `int()`, `float()`, `list()`, `tuple()`, `set()`, `dict()`, `bool()`, `bytes()` 
 
 

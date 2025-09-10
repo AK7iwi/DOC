@@ -87,8 +87,7 @@ print(colors[-1])      # "blue"
 
 # Add/Remove
 # Tuples are immutable - cannot add or remove elements 
-# Need to recreate a tuple or 
-# use list() to convert if modification (modify,add,remove) needed
+# Need to recreate a tuple or use list() to convert if modification (modify,add,remove) needed
 tuple_data = (1, 2, 3)
 list_data = list(tuple_data)  # Convert to list
 list_data.append(4)           # Add element
@@ -517,8 +516,9 @@ Error handling keywords. `try/except` catches errors, `raise` creates custom err
 ```python
 try:
     result = 10 / 0
-except ZeroDivisionError:
+except ZeroDivisionError: 
     print("Cannot divide by zero!")
+# `Exception` instead of `ZeroDivisionError` work also but less precis
 
 # Using Exception as e to get error details
 try:
@@ -544,12 +544,21 @@ def check_age(age):
     if age < 0:
         raise ValueError("Age cannot be negative")
     return age
+
+try:
+    check_age(-1)
+except ValueError as e: 
+    print(e)
+
+# `Exception` instead of `ValueError` work also but less precis
 ```
 
 - **Key additions about try\except:**
 
 1. **`except Exception as e` example** showing how to catch any exception and access error details
 2. **Error details access** - using `e` to get the error message and `type(e).__name__` to get the error type
+3. Python vs C++: `try` = `try`, `except` = `catch`, `raise` = `throw`
+4. `ZeroDivisionError`, `ValueError`, `AssertionError`, and `Exception` are Python error classes. `Exception` is the most general class and catches all exceptions.
 
 ### II) Built-in
 

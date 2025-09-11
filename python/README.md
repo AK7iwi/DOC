@@ -10,11 +10,22 @@
 
 </div>
 
-In Python, there's a distinction:
+The official documentation of python: [Python Official Documentation][Python Official Documentation]  
+
+a) In Python, there's a distinction:
 
 - **Built-in functions** are functions like `print()`, `len()`, `max()`, `min()`, etc. that are available globally
 - **Module functions** are functions that belong to a specific module and must be imported before use.
 - **Methods** are functions that belong to specific objects/classes, like `list.append()`, `set.add()`, `dict.keys()`, etc.
+
+b) Script vs Module
+
+- **Script**: File run directly with `python filename.py`
+- **Module**: File imported into another script
+
+c) Norme 
+
+You can use flake8 for the norme. You can find the doc [here][flake8 doc]
 
 ---
 
@@ -400,7 +411,13 @@ if len(sys.argv) > 2:
 2. **sys.argv[1:]** - Command-line arguments passed to the script
 3. **len(sys.argv)** - Total number of arguments (including script name)
 
-### V) lambda
+
+### V) __doc__
+
+### VI) __name__ = __main__
+
+
+### VIIIIIII) lambda
 
 
 <div align="center">
@@ -567,13 +584,11 @@ except ZeroDivisionError:
     print("Cannot divide by zero!")
 # `Exception` instead of `ZeroDivisionError` work also but less precis
 
-
-# Check if argument is an integer
+# Check if argument is an integer/ Will be catch by an another "try/except"
 try:
     number = int(arg)
 except ValueError:
     raise AssertionError("argument is not an integer")
-
 
 # Using Exception as e to get error details
 try:
@@ -609,10 +624,10 @@ except ValueError as e:
 
 - **Key additions about try\except:**
 
-1. **`except Exception as e` example** showing how to catch any exception and access error details
+1. `except Exception as e`: catch any exception and access error details
 2. **Error details access** - using `e` to get the error message and `type(e).__name__` to get the error type
-3. Python vs C++: `try` = `try`, `except` = `catch`, `raise` = `throw`
-4. `ZeroDivisionError`, `ValueError`, `AssertionError`, and `Exception` are Python error classes. `Exception` is the most general class and catches all exceptions.
+3. **Python vs C++**: `try` = `try`, `except` = `catch`, `raise` = `throw`
+4. `ZeroDivisionError`, `ValueError`, `AssertionError`, and `Exception` are Python error classes (Built-in exception). `Exception` is the most general class and catches all exceptions. Documentation about [Built-in exception][Built-in exceptions]
 
 ### II) Built-in
 
@@ -758,3 +773,14 @@ print(numbers)  # [0, 1, 2, 3, 4]
 - **Key points:**
 
 1. **Conversion** - Python provides multiple built-in conversion functions (also called type constructors) to transform data from one type to another. List of conversion functions: `str()`, `int()`, `float()`, `list()`, `tuple()`, `set()`, `dict()`, `bool()`, `bytes()` 
+
+
+## Additional Resources
+
+- [Python Official Documentation](https://docs.python.org/)
+- [Built-in exceptions](https://docs.python.org/3/library/exceptions.html)
+- [flake8 doc](https://flake8.pycqa.org/en/latest/)
+
+[Python Official Documentation]: https://docs.python.org/
+[Built-in exceptions]: https://docs.python.org/3/library/exceptions.html
+[flake8 doc]: https://flake8.pycqa.org/en/latest/

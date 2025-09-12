@@ -247,13 +247,13 @@ print(message)
 # City: Paris
 ```
 
-- **Key features of F-strings:**
+**Key points of F-strings:**
 
-1. **Simple syntax** - Just prefix with `f` and use `{}` for variables
-2. **Expression evaluation** - Can include calculations and function calls
-3. **Formatting options** - Can format numbers, dates, etc.
-4. **Multi-line support** - Can span multiple lines
-5. **Performance** - Faster than other string formatting methods
+- **Simple syntax** - Just prefix with `f` and use `{}` for variables
+- **Expression evaluation** - Can include calculations and function calls
+- **Formatting options** - Can format numbers, dates, etc.
+- **Multi-line support** - Can span multiple lines
+- **Performance** - Faster than other string formatting methods
 
 ### III) Different types of NULL
 
@@ -369,13 +369,13 @@ if not text:  # Empty string is falsy
 result = "" + "Hello"  # "Hello"
 ```
 
-- **Key points:**
+**Key points:**
 
-1. **None** - Use `is None` to check, represents absence of value
-2. **NaN** - Use `math.isnan()` to check, result of invalid math operations
-3. **False** - Boolean value, use `not` or `== False` to check
-4. **0** - Numeric zero, use `== 0` to check
-5. **Empty string** - Use `== ""` or `not string` to check (empty strings are falsy)
+- **None** - Use `is None` to check, represents absence of value
+- **NaN** - Use `math.isnan()` to check, result of invalid math operations
+- **False** - Boolean value, use `not` or `== False` to check
+- **0** - Numeric zero, use `== 0` to check
+- **Empty string** - Use `== ""` or `not string` to check (empty strings are falsy)
 
 ### IV) `sys.argv`
 
@@ -409,11 +409,11 @@ if len(sys.argv) > 2:
 # Second argument: world
 ```
 
-- **Key points:**
+**Key points:**
 
-1. `sys.argv[0]` - Always the script name
-2. `sys.argv[1:]` - Command-line arguments passed to the script
-3. `len(sys.argv)` - Total number of arguments (including script name)
+- `sys.argv[0]` - Always the script name
+- `sys.argv[1:]` - Command-line arguments passed to the script
+- `len(sys.argv)` - Total number of arguments (including script name)
 
 ### V) `__name__`
 
@@ -536,7 +536,7 @@ print(len.__doc__)
 # Output: Return the number of items in a container.
 ```
 
-- **Key points:**
+**Key points:**
 
 - `__doc__` - Contains the docstring (documentation) of functions, classes, or modules
 - **Docstrings** - Written with triple quotes `"""` right after function definition
@@ -656,11 +656,11 @@ print(num3 is num4)  # False (different objects)
 
 - **Key points about `is`:**
 
-1. **Identity vs Equality** - `is` checks if two variables point to the same object, `==` checks if values are equal
-2. **`is not`** - Negates the identity check, useful for checking if something is NOT None
-3. **Memory efficiency** - Python optimizes small integers (-5 to 256) to be the same object
-4. **None checking** - Always use `is None` or `is not None` instead of `== None`
-5. **Object comparison** - Useful for checking if variables reference the same list, dict, or custom object
+- **Identity vs Equality** - `is` checks if two variables point to the same object, `==` checks if values are equal
+- **`is not`** - Negates the identity check, useful for checking if something is NOT None
+- **Memory efficiency** - Python optimizes small integers (-5 to 256) to be the same object
+- **None checking** - Always use `is None` or `is not None` instead of `== None`
+- **Object comparison** - Useful for checking if variables reference the same list, dict, or custom object
 
 #### for (+continue, break, enumerate)
 
@@ -786,8 +786,9 @@ for i in range(3):
 ```
 
 - **Key points about `for`:**
-1. Python's most fundamental constructs
-2. Used extensively for iterating over sequences, collections, and other iterable objects
+
+- Python's most fundamental constructs
+- Used extensively for iterating over sequences, collections, and other iterable objects
 
 #### while
 
@@ -880,12 +881,12 @@ except ValueError as e:
 # `Exception` instead of `ValueError` work also but less precis
 ```
 
-- **Key additions about try\except:**
+**Key additions about try\except:**
 
-1. `except Exception as e`: catch any exception and access error details
-2. **Error details access** - using `e` to get the error message and `type(e).__name__` to get the error type
-3. **Python vs C++**: `try` = `try`, `except` = `catch`, `raise` = `throw`
-4. `ZeroDivisionError`, `ValueError`, `AssertionError`, and `Exception` are Python error classes (Built-in exception). `Exception` is the most general class and catches all exceptions. Documentation about [Built-in exception][Built-in exceptions]
+- `except Exception as e`: catch any exception and access error details
+- **Error details access** - using `e` to get the error message and `type(e).__name__` to get the error type
+- **Python vs C++**: `try` = `try`, `except` = `catch`, `raise` = `throw`
+- `ZeroDivisionError`, `ValueError`, `AssertionError`, and `Exception` are Python error classes (Built-in exception). `Exception` is the most general class and catches all exceptions. Documentation about [Built-in exception][Built-in exceptions]
 
 ### II) Built-in
 
@@ -963,7 +964,7 @@ if len(fruits) > 0:
 
 Built-in function that reads user input from the keyboard and returns it as a string. The program pauses and waits for the user to type something and press Enter.
 
-**Basic input exemple**
+**a) Basic input exemple**
 
 ```python
 name = input("Enter your name: ")
@@ -973,7 +974,7 @@ print(f"Hello, {name}!")
 # Hello, John!
 ```
 
-**Input with different data types**
+**b) Input with different data types**
 ```python
 age = input("Enter your age: ")
 age = int(age)  # Convert string to integer
@@ -983,7 +984,7 @@ print(f"You are {age} years old")
 # You are 25 years old 
 ```
 
-**Simple calculator**
+**c) Simple calculator**
 ```python
 num1 = float(input("Enter first number: "))
 num2 = float(input("Enter second number: "))
@@ -995,12 +996,12 @@ print(f"{num1} + {num2} = {result}")
 # 10.5 + 5.2 = 15.7
 ```
 
-- **Key points:**
+**Key points:**
 
-1. **Always returns a string** - Even if user types numbers, `input()` returns a string
-2. **Program pauses** - Waits for user to type and press Enter
-3. **Type conversion needed** - Use `int()`, `float()` to convert string input to numbers
-4. **Prompt message** - The text inside `input("message")` is displayed to the user
+- **Always returns a string** - Even if user types numbers, `input()` returns a string
+- **Program pauses** - Waits for user to type and press Enter
+- **Type conversion needed** - Use `int()`, `float()` to convert string input to numbers
+- **Prompt message** - The text inside `input("message")` is displayed to the user
 
 #### Function to convert
 
@@ -1070,9 +1071,10 @@ numbers = list(range(5))
 print(numbers)  # [0, 1, 2, 3, 4]
 ```
 
-- **Key points:**
+**Key points:**
 
-1. **Conversion** - Python provides multiple built-in conversion functions (also called type constructors) to transform data from one type to another. List of conversion functions: `str()`, `int()`, `float()`, `list()`, `tuple()`, `set()`, `dict()`, `bool()`, `bytes()` 
+- **Conversion** - Python provides multiple built-in conversion functions (also called type constructors) to transform data from one type to another
+- **List of conversion functions:** `str()`, `int()`, `float()`, `list()`, `tuple()`, `set()`, `dict()`, `bool()`, `bytes()` 
 
 
 ## Additional Resources

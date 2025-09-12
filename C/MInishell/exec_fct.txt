@@ -4,7 +4,7 @@ Important fct for Exec:
 2)proto
 3)Explaination about parameter
 4)Return value/error
-5)exemple
+5)example
 
 a) getcwd: 
 

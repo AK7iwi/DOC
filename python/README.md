@@ -37,7 +37,7 @@ You can use flake8 for the norme. You can find the doc [here][flake8 doc]
 
 ### I) Basic Data types
 
-**a) List**
+**1. List**
 
 Ordered, mutable collection that allows duplicate elements.
 
@@ -73,7 +73,7 @@ print(len(duplicate_list))   # 5 (counts all elements including duplicates)
 print(duplicate_list.count("apple"))  # 2 (counts occurrences of "apple")
 ```
 
-**b) Tuple**
+**2. Tuple**
 
 Ordered, immutable collection that allows duplicate elements.
 
@@ -112,7 +112,7 @@ print(duplicate_tuple.count("apple"))  # 2 (counts occurrences of "apple")
 print(duplicate_tuple.index("banana")) # 1 (returns first occurrence index)
 ```
 
-**c) Set**
+**3. Set**
 
 Unordered, mutable collection of unique elements.
 
@@ -159,7 +159,7 @@ print(duplicate_set)         # {1, 2, 3, 4, 5} (duplicates automatically removed
 print(len(duplicate_set))    # 5 (counts unique elements only)
 ```
 
-**d) Dictionary**
+**4. Dictionary**
 
 Unordered, mutable collection of key-value pairs.
 
@@ -247,7 +247,6 @@ print(message)
 # City: Paris
 ```
 
-
 **Key points of F-strings:**
 
 - **Simple syntax** - Just prefix with `f` and use `{}` for variables
@@ -258,7 +257,7 @@ print(message)
 
 ### III) Different types of NULL
 
-**a) None value**
+**1. None value**
 
 `None` represents absence of value (like NULL in C)
 
@@ -278,7 +277,7 @@ name = None
 print(name)  # None
 ```
 
-**b) NaN (Not a Number)**
+**2. NaN (Not a Number)**
 
 `float("NaN")` creates a special float value
 
@@ -300,7 +299,7 @@ if math.isnan(value):
     print("This is NaN")
 ```
 
-**c) Boolean False**
+**3. Boolean False**
 
 `False` as a null-like value
 
@@ -323,7 +322,7 @@ else:
     print("Flag is False")
 ```
 
-**d) Zero as null**
+**4. Zero as null**
 
 Integer `0` representing empty/nothing
 
@@ -345,7 +344,7 @@ for price in [10, 20, 30]:
 print(f"Total: {total}")  # Total: 60
 ```
 
-**e) Empty string**
+**5. Empty string**
 
 `""` representing no text
 
@@ -370,7 +369,6 @@ if not text:  # Empty string is falsy
 result = "" + "Hello"  # "Hello"
 ```
 
-
 **Key points:**
 
 - **None** - Use `is None` to check, represents absence of value
@@ -383,7 +381,9 @@ result = "" + "Hello"  # "Hello"
 
 A list that contains command-line arguments passed to a Python script. The first element (`sys.argv[0]`) is always the script name.
 
-**Exemple 1: Basic usage**
+**1. Example**
+
+**Example 1: Basic usage**
 ```python
 import sys
 
@@ -397,7 +397,7 @@ print("All arguments:", sys.argv)
 # All arguments: ['script.py', 'hello', 'world']
 ```
 
-**Exemple 2: Acces specific arguments**
+**Example 2: Acces specific arguments**
 ```python
 import sys
 
@@ -411,7 +411,6 @@ if len(sys.argv) > 2:
 # Second argument: world
 ```
 
-
 **Key points:**
 
 - `sys.argv[0]` - Always the script name
@@ -421,6 +420,8 @@ if len(sys.argv) > 2:
 ### V) `__name__`
 
 Special built-in variable in Python that contains the name of the current module
+
+**1. Example**
 
 **Example 1: Script run directly**
 ```python
@@ -551,7 +552,7 @@ print(len.__doc__)
 
 Keyword that creates **anonymous functions** (functions without a name).
 
-**Basic Syntax:**
+**Basic Syntax**
 ```python
 lambda arguments: expression
 ```
@@ -573,7 +574,7 @@ add_five = lambda x: x + 5
 result = add_five(3)  # result = 8
 ```
 
-**2. Examples:**
+**2. Examples**
 
 **a) Simple lambda:**
 ```python
@@ -611,7 +612,7 @@ get_five = lambda: 5
 print(get_five())  # 5
 ```
 
-**3. Common Use Cases:**
+**3. Common Use Cases**
 
 **a) In `filter()` function:**
 ```python
@@ -633,7 +634,7 @@ students = [('Alice', 20), ('Bob', 18), ('Charlie', 22)]
 sorted_by_age = sorted(students, key=lambda student: student[1])
 print(sorted_by_age)  # [('Bob', 18), ('Alice', 20), ('Charlie', 22)]
 ```
-**Key Characteristics:**
+**Key points:**
 
 - **Anonymous** - No function name (unless assigned to a variable)
 - **Single expression** - Can only contain one expression
@@ -649,6 +650,68 @@ print(sorted_by_age)  # [('Bob', 18), ('Alice', 20), ('Charlie', 22)]
     - Cannot have **docstrings**
     - Cannot have **type hints**
 - **Perfect for:** simple, one-time operations like filtering, mapping, or sorting
+
+
+### VIII) List comprehension
+
+Concise way to create lists by applying an expression to each item in an iterable, optionally with conditions. More readable and often faster than traditional for loops.
+
+**Basic syntax**
+
+```python
+result = [expression for item in iterable if condition]
+```
+
+**1. Basic examples**
+
+**a) Basic list comprehension (+counter-example)** 
+```python
+numbers = [1, 2, 3, 4, 5]
+squares = [x**2 for x in numbers]
+print(squares)  # [1, 4, 9, 16, 25]
+
+# Counter-example: Traditional for loop (same result)
+squares_traditional = []
+for x in numbers:
+    squares_traditional.append(x**2)
+print(squares_traditional)  # [1, 4, 9, 16, 25]
+```
+
+**b) List comprehension with condition (filter)**
+```python
+numbers = [1, 2, 3, 4, 5]
+even_numbers = [x for x in numbers if x % 2 == 0]
+print(even_numbers)  # [2, 4]
+```
+
+**c) List comprehension with if-else (transform)**
+```python
+result = ["even" if x % 2 == 0 else "odd" for x in numbers]
+print(result)  # ['odd', 'even', 'odd', 'even', 'odd']
+```
+
+**d) List comprehension with string**
+```python
+words = ["hello", "world", "python"]
+upper_words = [word.upper() for word in words]
+print(upper_words)  # ['HELLO', 'WORLD', 'PYTHON']
+```
+
+**e) Nested list comprehension**
+```python
+matrix = [[1, 2], [3, 4], [5, 6]]
+flattened = [num for row in matrix for num in row]
+print(flattened)  # [1, 2, 3, 4, 5, 6]
+```
+
+
+**Key points:**
+
+- **More concise** than traditional for loops
+- **Faster execution** in most cases
+- **Can include conditions** for filtering
+- **Can use if-else** for transformations
+- **Supports nesting** for complex operations
 
 <div align="center">
 
@@ -910,7 +973,7 @@ while count < 3:
 
 Keyword used to import modules or specific functions from modules.
 
-**Exemple 1:**
+**Example 1:**
 ```python
 import math
 from datetime import date
@@ -918,7 +981,7 @@ from datetime import date
 print(math.sqrt(16))  # Output: 4.0
 print(date.today())   # Output: 2024-01-15
 ```
-**Exemple 2:**
+**Example 2:**
 ```python
 # File: utils.py
 print("Hello World!")
@@ -932,7 +995,7 @@ def add(a, b)
 import utils
 
 print("Hello my friend")
-# Exemple: python main.py
+# Example: python main.py
 # Output:
 # Hello World
 # Hello my friend
@@ -1068,7 +1131,7 @@ if len(fruits) > 0:
 
 Built-in function that reads user input from the keyboard and returns it as a string. The program pauses and waits for the user to type something and press Enter.
 
-**a) Basic input exemple**
+**a) Basic input example**
 
 ```python
 name = input("Enter your name: ")

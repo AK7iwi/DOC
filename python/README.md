@@ -12,18 +12,18 @@
 
 The official documentation of python: [Python Official Documentation][Python Official Documentation]  
 
-a) In Python, there's a distinction:
+I) In Python, there's a distinction:
 
 - **Built-in functions** are functions like `print()`, `len()`, `max()`, `min()`, etc. that are available globally
 - **Module functions** are functions that belong to a specific module and must be imported before use.
 - **Methods** are functions that belong to specific objects/classes, like `list.append()`, `set.add()`, `dict.keys()`, etc.
 
-b) Script vs Module
+II) Script vs Module
 
 - **Script**: File run directly with `python filename.py`
 - **Module**: File imported into another script
 
-c) Norme 
+III) Norme 
 
 You can use flake8 for the norme. You can find the doc [here][flake8 doc]
 
@@ -41,13 +41,13 @@ You can use flake8 for the norme. You can find the doc [here][flake8 doc]
 
 Ordered, mutable collection that allows duplicate elements.
 
-- **Properties:**
+**Properties:**
   - Ordered (elements have a defined order)
   - Indexed (access elements by position)
   - Mutable (can be modified after creation)
   - Allows duplicates
 
-- **Syntax/Example:**
+**Example:**
 ```python
 # Create
 fruits = ["apple", "banana", "orange"]
@@ -77,13 +77,13 @@ print(duplicate_list.count("apple"))  # 2 (counts occurrences of "apple")
 
 Ordered, immutable collection that allows duplicate elements.
 
-- **Properties:**
+**Properties:**
   - Ordered (elements have a defined order)
   - Indexed (access elements by position)
   - Immutable (cannot be modified after creation)
   - Allows duplicates
 
-- **Syntax/Example:**
+**Example:**
 ```python
 # Create
 coordinates = (10, 20)
@@ -116,13 +116,13 @@ print(duplicate_tuple.index("banana")) # 1 (returns first occurrence index)
 
 Unordered, mutable collection of unique elements.
 
-- **Properties:**
+**Properties:**
   - Unordered (no defined order)
   - Not indexed (cannot access by position)
   - Mutable (can be modified after creation)
   - No duplicates (automatically removes duplicates)
 
-- **Syntax/Example:**
+**Example:**
 ```python
 # Create
 unique_numbers = {1, 2, 3, 4, 5}
@@ -163,13 +163,13 @@ print(len(duplicate_set))    # 5 (counts unique elements only)
 
 Unordered, mutable collection of key-value pairs.
 
-- **Properties:**
+**Properties:**
   - Unordered (no defined order)
   - Key-value pairs (access by key, not index)
   - Mutable (can be modified after creation)
   - No duplicate keys (keys must be unique)
 
-- **Syntax/Example:**
+**Example:**
 ```python
 # Create
 person = {"name": "John", "age": 30, "city": "New York"}
@@ -200,13 +200,13 @@ print(len(duplicate_keys))   # 2 (only unique keys counted)
 
 F-strings (formatted string literals) are a way to embed expressions inside string literals using curly braces `{}`. They provide a concise and readable way to format strings with variables and expressions.
 
-- **Properties:**
+**Properties:**
   - Introduced in Python 3.6
   - Fast and efficient string formatting
   - Can include variables, expressions, and function calls
   - More readable than other string formatting methods
 
-- **Syntax/Example:**
+**Example:**
 ```python
 # Basic usage
 name = "John"
@@ -254,7 +254,6 @@ print(message)
 3. **Formatting options** - Can format numbers, dates, etc.
 4. **Multi-line support** - Can span multiple lines
 5. **Performance** - Faster than other string formatting methods
-
 
 ### III) Different types of NULL
 
@@ -382,25 +381,30 @@ result = "" + "Hello"  # "Hello"
 
 A list that contains command-line arguments passed to a Python script. The first element (`sys.argv[0]`) is always the script name.
 
+**Exemple 1: Basic usage**
 ```python
 import sys
 
-# Basic usage
 print("Script name:", sys.argv[0])
 print("Number of arguments:", len(sys.argv))
 print("All arguments:", sys.argv)
-
-# Access specific arguments
-if len(sys.argv) > 1:
-    print("First argument:", sys.argv[1])
-if len(sys.argv) > 2:
-    print("Second argument:", sys.argv[2])
-
 # Example: python script.py hello world
 # Output:
 # Script name: script.py
 # Number of arguments: 3
 # All arguments: ['script.py', 'hello', 'world']
+```
+
+**Exemple 2: Acces specific arguments**
+```python
+import sys
+
+if len(sys.argv) > 1:
+    print("First argument:", sys.argv[1])
+if len(sys.argv) > 2:
+    print("Second argument:", sys.argv[2])
+# Example: python script.py hello world
+# Output:
 # First argument: hello
 # Second argument: world
 ```
@@ -648,8 +652,6 @@ print(num1 is num2)  # True (same object due to optimization)
 num3 = 257
 num4 = 257
 print(num3 is num4)  # False (different objects)
-
-
 ```
 
 - **Key points about `is`:**
@@ -660,17 +662,132 @@ print(num3 is num4)  # False (different objects)
 4. **None checking** - Always use `is None` or `is not None` instead of `== None`
 5. **Object comparison** - Useful for checking if variables reference the same list, dict, or custom object
 
-#### for
+#### for (+continue, break, enumerate)
 
 Loop keyword used to iterate over sequences (lists, tuples, strings, etc.).
 
+**Basic `for` Loop Syntax**
+
+```python
+for item in iterable:
+    # code block to execute
+```
+
+**1. Common Examples**
+
+**a) Looping through a list:**
+```python
+fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+```
+
+**b) Looping through a range:**
+```python
+for i in range(5):
+    print(i)  # prints 0, 1, 2, 3, 4
+```
+
+**c) Looping through a string:**
+```python
+for char in "Hello":
+    print(char)  # prints H, e, l, l, o
+```
+
+**2. `for` Loop with Conditions**
+
+**a) Using `if` statements inside the loop:**
+```python
+numbers = [1, 2, 3, 4, 5, 6]
+for num in numbers:
+    if num % 2 == 0:
+        print(f"{num} is even")
+    else:
+        print(f"{num} is odd")
+```
+
+**b) Using `continue` to skip iterations:**
+
+`continue`: skips the current iteration and continues with the next one
+
+```python
+for i in range(10):
+    if i == 5:
+        continue  # skip when i equals 5
+    print(i)
+```
+
+**c) Using `break` to exit the loop:**
+
+`break`: exits the loop entirely
+
+```python
+for i in range(10):
+    if i == 5:
+        break  # exit loop when i equals 5
+    print(i)
+```
+
+**3. List Comprehensions with Conditions**
+
+**a) Basic list comprehension:**
 ```python
 numbers = [1, 2, 3, 4, 5]
-
-for num in numbers:
-    print(num * 2)
-# Output: 2, 4, 6, 8, 10
+squares = [x**2 for x in numbers]
 ```
+
+**b) List comprehension with condition:**
+```python
+numbers = [1, 2, 3, 4, 5, 6]
+even_squares = [x**2 for x in numbers if x % 2 == 0]
+```
+
+**c) List comprehension with if-else:**
+```python
+numbers = [1, 2, 3, 4, 5]
+result = ["even" if x % 2 == 0 else "odd" for x in numbers]
+```
+
+**4. Dictionary Looping**
+
+**a) Looping through keys:**
+```python
+person = {"name": "John", "age": 30, "city": "New York"}
+for key in person:
+    print(key)
+```
+
+**b) Looping through items:**
+```python
+person = {"name": "John", "age": 30, "city": "New York"}
+for key, value in person.items():
+    print(f"{key}: {value}")
+```
+
+**5. `enumerate` (with index)**
+
+Built-in function that adds a counter to an iterable and returns it as an enumerate object. Useful when you need both the index and the value in a loop.
+
+**a) Loop through a list and get both index and value**  
+```python
+fruits = ["apple", "banana", "cherry"]
+for index, fruit in enumerate(fruits):
+    print(f"{index}: {fruit}")
+```
+
+**6. Nested Loops**
+
+**a) Loop inside another loop**
+
+```python
+for i in range(3):
+    for j in range(3):
+        print(f"i={i}, j={j}")
+```
+
+- **Key points about `for`:**
+1. Python's most fundamental constructs
+2. Used extensively for iterating over sequences, collections, and other iterable objects
 
 #### while
 
@@ -797,7 +914,6 @@ def add_numbers(a, b):
 
 sum_result = add_numbers(5, 3)
 print(sum_result)  # Output: 8
-
 ```
 
 #### type
@@ -881,10 +997,10 @@ print(f"{num1} + {num2} = {result}")
 
 - **Key points:**
 
-- **Always returns a string** - Even if user types numbers, `input()` returns a string
-- **Program pauses** - Waits for user to type and press Enter
-- **Type conversion needed** - Use `int()`, `float()` to convert string input to numbers
-- **Prompt message** - The text inside `input("message")` is displayed to the user
+1. **Always returns a string** - Even if user types numbers, `input()` returns a string
+2. **Program pauses** - Waits for user to type and press Enter
+3. **Type conversion needed** - Use `int()`, `float()` to convert string input to numbers
+4. **Prompt message** - The text inside `input("message")` is displayed to the user
 
 #### Function to convert
 

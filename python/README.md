@@ -378,7 +378,7 @@ result = "" + "Hello"  # "Hello"
 4. **0** - Numeric zero, use `== 0` to check
 5. **Empty string** - Use `== ""` or `not string` to check (empty strings are falsy)
 
-### IV) sys.argv
+### IV) `sys.argv`
 
 A list that contains command-line arguments passed to a Python script. The first element (`sys.argv[0]`) is always the script name.
 
@@ -454,7 +454,7 @@ if __name__ == "__main__":
 # 5 + 3 = 8
 ```
 
-**Example 1: Script imported as module**
+**Example 3: Script imported as module**
 ```python
 # File: utils.py
 def greet(name):
@@ -750,7 +750,6 @@ except ValueError as e:
 except Exception as e:
     print(f"Other error: {e}")
 
-
 # Custom error
 def check_age(age):
     if age < 0:
@@ -843,6 +842,49 @@ if len(fruits) > 0:
     print(f"We have {len(fruits)} fruits")
 # Output: We have 3 fruits
 ```
+
+#### input
+
+Built-in function that reads user input from the keyboard and returns it as a string. The program pauses and waits for the user to type something and press Enter.
+
+**Basic input exemple**
+
+```python
+name = input("Enter your name: ")
+print(f"Hello, {name}!")
+# Output:
+# Enter your name: John
+# Hello, John!
+```
+
+**Input with different data types**
+```python
+age = input("Enter your age: ")
+age = int(age)  # Convert string to integer
+print(f"You are {age} years old")
+# Output:
+# Enter your age: 25
+# You are 25 years old 
+```
+
+**Simple calculator**
+```python
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+result = num1 + num2
+print(f"{num1} + {num2} = {result}")
+# Output:
+# Enter first number: 10.5
+# Enter second number: 5.2
+# 10.5 + 5.2 = 15.7
+```
+
+- **Key points:**
+
+- **Always returns a string** - Even if user types numbers, `input()` returns a string
+- **Program pauses** - Waits for user to type and press Enter
+- **Type conversion needed** - Use `int()`, `float()` to convert string input to numbers
+- **Prompt message** - The text inside `input("message")` is displayed to the user
 
 #### Function to convert
 

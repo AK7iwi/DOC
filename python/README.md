@@ -549,6 +549,106 @@ print(len.__doc__)
 
 ### VII) `lambda`
 
+Keyword that creates **anonymous functions** (functions without a name).
+
+**Basic Syntax:**
+```python
+lambda arguments: expression
+```
+
+**1. Comparison: Regular Function vs Lambda**
+
+**Regular Function:**
+```python
+def add_five(x):
+    return x + 5
+
+result = add_five(3)  # result = 8
+```
+
+**Lambda Function (equivalent):**
+```python
+add_five = lambda x: x + 5
+
+result = add_five(3)  # result = 8
+```
+
+**2. Examples:**
+
+**a) Simple lambda:**
+```python
+# Regular function
+def square(x):
+    return x ** 2
+
+# Lambda equivalent
+square = lambda x: x ** 2
+
+print(square(5))  # 25
+```
+
+**b) Lambda with multiple arguments:**
+```python
+# Regular function
+def add(x, y):
+    return x + y
+
+# Lambda equivalent
+add = lambda x, y: x + y
+
+print(add(3, 4))  # 7
+```
+
+**c) Lambda with no arguments:**
+```python
+# Regular function
+def get_five():
+    return 5
+
+# Lambda equivalent
+get_five = lambda: 5
+
+print(get_five())  # 5
+```
+
+**3. Common Use Cases:**
+
+**a) In `filter()` function:**
+```python
+numbers = [1, 2, 3, 4, 5, 6]
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print(even_numbers)  # [2, 4, 6]
+```
+
+**b) In `map()` function:**
+```python
+numbers = [1, 2, 3, 4, 5]
+squared = list(map(lambda x: x ** 2, numbers))
+print(squared)  # [1, 4, 9, 16, 25]
+```
+
+**c) In `sorted()` function:**
+```python
+students = [('Alice', 20), ('Bob', 18), ('Charlie', 22)]
+sorted_by_age = sorted(students, key=lambda student: student[1])
+print(sorted_by_age)  # [('Bob', 18), ('Alice', 20), ('Charlie', 22)]
+```
+**Key Characteristics:**
+
+- **Anonymous** - No function name (unless assigned to a variable)
+- **Single expression** - Can only contain one expression
+- **Implicit return** - The expression is automatically returned
+- **Concise** - Shorter than regular functions
+- **When to Use Lambda:**
+    - Function is simple (one expression)
+    - Function is used only once
+    - Function is passed as an argument to another function
+- **Limitations:**
+    - Can only contain **one expression**
+    - Cannot contain **multiple statements**
+    - Cannot have **docstrings**
+    - Cannot have **type hints**
+- **Perfect for:** simple, one-time operations like filtering, mapping, or sorting
 
 <div align="center">
 
@@ -666,12 +766,11 @@ print(num3 is num4)  # False (different objects)
 - **None checking** - Always use `is None` or `is not None` instead of `== None`
 - **Object comparison** - Useful for checking if variables reference the same list, dict, or custom object
 
-#### for (+continue, break, enumerate)
+#### for (+continue, break, enumerate) + List comprehension 
 
 Loop keyword used to iterate over sequences (lists, tuples, strings, etc.).
 
-**Basic `for` Loop Syntax**
-
+**Basic Syntax**
 ```python
 for item in iterable:
     # code block to execute
@@ -791,7 +890,6 @@ for i in range(3):
 
 
 **Key points about `for`:**
-
 - Python's most fundamental constructs
 - Used extensively for iterating over sequences, collections, and other iterable objects
 
@@ -834,6 +932,7 @@ def add(a, b)
 import utils
 
 print("Hello my friend")
+# Exemple: python main.py
 # Output:
 # Hello World
 # Hello my friend
@@ -888,7 +987,6 @@ except ValueError as e:
 
 
 **Key additions about try\except:**
-
 - `except Exception as e`: catch any exception and access error details
 - **Error details access** - using `e` to get the error message and `type(e).__name__` to get the error type
 - **Python vs C++**: `try` = `try`, `except` = `catch`, `raise` = `throw`

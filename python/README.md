@@ -247,6 +247,7 @@ print(message)
 # City: Paris
 ```
 
+
 **Key points of F-strings:**
 
 - **Simple syntax** - Just prefix with `f` and use `{}` for variables
@@ -369,6 +370,7 @@ if not text:  # Empty string is falsy
 result = "" + "Hello"  # "Hello"
 ```
 
+
 **Key points:**
 
 - **None** - Use `is None` to check, represents absence of value
@@ -408,6 +410,7 @@ if len(sys.argv) > 2:
 # First argument: hello
 # Second argument: world
 ```
+
 
 **Key points:**
 
@@ -536,13 +539,13 @@ print(len.__doc__)
 # Output: Return the number of items in a container.
 ```
 
+
 **Key points:**
 
 - `__doc__` - Contains the docstring (documentation) of functions, classes, or modules
 - **Docstrings** - Written with triple quotes `"""` right after function definition
 - **Accessible** - Use `function.__doc__` to read the documentation
 - **Built-in functions** - Even Python's built-in functions have docstrings
-
 
 ### VII) `lambda`
 
@@ -654,7 +657,8 @@ num4 = 257
 print(num3 is num4)  # False (different objects)
 ```
 
-- **Key points about `is`:**
+
+**Key points about `is`:**
 
 - **Identity vs Equality** - `is` checks if two variables point to the same object, `==` checks if values are equal
 - **`is not`** - Negates the identity check, useful for checking if something is NOT None
@@ -785,7 +789,8 @@ for i in range(3):
         print(f"i={i}, j={j}")
 ```
 
-- **Key points about `for`:**
+
+**Key points about `for`:**
 
 - Python's most fundamental constructs
 - Used extensively for iterating over sequences, collections, and other iterable objects
@@ -880,6 +885,7 @@ except ValueError as e:
     print(e)
 # `Exception` instead of `ValueError` work also but less precis
 ```
+
 
 **Key additions about try\except:**
 
@@ -996,6 +1002,7 @@ print(f"{num1} + {num2} = {result}")
 # 10.5 + 5.2 = 15.7
 ```
 
+
 **Key points:**
 
 - **Always returns a string** - Even if user types numbers, `input()` returns a string
@@ -1070,6 +1077,7 @@ print(list(set_data))    # [4, 5, 6] (order may vary)
 numbers = list(range(5))
 print(numbers)  # [0, 1, 2, 3, 4]
 ```
+
 
 **Key points:**
 

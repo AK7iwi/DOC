@@ -407,17 +407,140 @@ if len(sys.argv) > 2:
 
 - **Key points:**
 
-1. **sys.argv[0]** - Always the script name
-2. **sys.argv[1:]** - Command-line arguments passed to the script
-3. **len(sys.argv)** - Total number of arguments (including script name)
+1. `sys.argv[0]` - Always the script name
+2. `sys.argv[1:]` - Command-line arguments passed to the script
+3. `len(sys.argv)` - Total number of arguments (including script name)
+
+### V) `__name__`
+
+Special built-in variable in Python that contains the name of the current module
+
+**Example 1: Script run directly**
+```python
+# File: main.py
+print(f"Current module name: {__name__}")
+
+if __name__ == "__main__":
+    print("This script is being run directly")
+    print("Running main program...")
+
+# When you run: python main.py
+# Output:
+# Current module name: __main__
+# This script is being run directly
+# Running main program...
+```
+
+**Example 2: Script run directly with functions**
+```python
+# File: calculator.py
+def add(a, b):
+    return a + b
+
+def multiply(a, b):
+    return a * b
+
+print(f"Module name: {__name__}")
+
+if __name__ == "__main__":
+    print("Calculator module run directly")
+    result = add(5, 3)
+    print(f"5 + 3 = {result}")
+
+# When you run: python calculator.py
+# Output:
+# Module name: __main__
+# Calculator module run directly
+# 5 + 3 = 8
+```
+
+**Example 1: Script imported as module**
+```python
+# File: utils.py
+def greet(name):
+    return f"Hello, {name}!"
+
+def calculate_square(x):
+    return x * x
+
+print(f"Module name: {__name__}")
+
+if __name__ == "__main__":
+    print("This won't run when imported")
+# When you run: python utils.py
+# Output:
+# Module name: __main__
+# This won't run when imported
+```
+
+```python
+# File: main.py
+import utils 
+
+print(f"Main module name: {__name__}")
+print(utils.greet("Alice"))
+
+# When you run: python main.py
+# Output:
+# Module name: utils
+# Main module name: __main__
+# Hello, Alice!
+
+# If you don't understand the order of the output, check the `import` point (Python loads and executes the imported module)
+```
+
+### VI) `__doc__`
+
+Special built-in variable that contains the documentation string (docstring) of a function, class, or module. If you write a description for your function, you can read it with `print(function.__doc__)`.
+
+```python
+# Example with function docstring
+def greet(name):
+    """This function greets a person by name."""
+    return f"Hello, {name}!"
+
+def calculate_area(length, width):
+    """
+    Calculate the area of a rectangle.
+    
+    Args:
+        length (float): The length of the rectangle
+        width (float): The width of the rectangle
+    
+    Returns:
+        float: The area of the rectangle
+    """
+    return length * width
+
+# Accessing docstrings
+print(greet.__doc__)
+# Output: This function greets a person by name.
+
+print(calculate_area.__doc__)
+# Output: 
+# Calculate the area of a rectangle.
+# 
+# Args:
+#     length (float): The length of the rectangle
+#     width (float): The width of the rectangle
+# 
+# Returns:
+#     float: The area of the rectangle
+
+# Built-in function example
+print(len.__doc__)
+# Output: Return the number of items in a container.
+```
+
+- **Key points:**
+
+- `__doc__` - Contains the docstring (documentation) of functions, classes, or modules
+- **Docstrings** - Written with triple quotes `"""` right after function definition
+- **Accessible** - Use `function.__doc__` to read the documentation
+- **Built-in functions** - Even Python's built-in functions have docstrings
 
 
-### V) __doc__
-
-### VI) __name__ = __main__
-
-
-### VIIIIIII) lambda
+### VII) `lambda`
 
 
 <div align="center">
@@ -566,12 +689,31 @@ while count < 3:
 
 Keyword used to import modules or specific functions from modules.
 
+**Exemple 1:**
 ```python
 import math
 from datetime import date
 
 print(math.sqrt(16))  # Output: 4.0
 print(date.today())   # Output: 2024-01-15
+```
+**Exemple 2:**
+```python
+# File: utils.py
+print("Hello World!")
+
+def add(a, b)
+    return a + b
+```
+
+```python
+# File : main.py
+import utils
+
+print("Hello my friend")
+# Output:
+# Hello World
+# Hello my friend
 ```
 
 #### try/except, raise

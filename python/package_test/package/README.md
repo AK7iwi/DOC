@@ -3,7 +3,7 @@
 A sample test package.
 
 ## Installation
-Build the package (from inside `ex09/`):
+Build the package (from inside `package/`):
 ```bash
 python -m pip install --upgrade build wheel
 python -m build

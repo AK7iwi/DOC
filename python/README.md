@@ -825,7 +825,7 @@ print(flattened)  # [1, 2, 3, 4, 5, 6]
 
 Process of organizing Python code into reusable, distributable packages that can be installed and imported by other projects.
 
-Check [here][] for a simple example.
+Check [here][https://github.com/AK7iwi/DOC/tree/main/python/package_test] for a simple example.
 
 **Package structure**
   - `__init__.py` file makes directory a Python package

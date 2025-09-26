@@ -1,6 +1,8 @@
 
+Usefulle cmd 
+
 
 Search a file/directory or executable:
 
-find for files and directories
-which for executable
+`find` for files and directories
+`which` for executable

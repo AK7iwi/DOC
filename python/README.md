@@ -4,38 +4,104 @@
 
 </div>
 
-<div align="center">
-
 ## General Concepts
 
-</div>
+The official documentation of python: [Python Official Documentation][Python Official Documentation].  
 
-The official documentation of python: [Python Official Documentation][Python Official Documentation]  
+I) Typed 
 
-I) In Python, there's a distinction:
+https://wiki.python.org/moin/Why%20is%20Python%20a%20dynamic%20language%20and%20also%20a%20strongly%20typed%20language
 
-- **Built-in functions** are functions like `print()`, `len()`, `max()`, `min()`, etc. that are available globally
+II) In Python, there's a distinction:
+
+- **Built-in functions** are functions like `print()`, `len()`, `max()`, `min()`, etc. that are available globally.
 - **Module functions** are functions that belong to a specific module and must be imported before use.
 - **Methods** are functions that belong to specific objects/classes, like `list.append()`, `set.add()`, `dict.keys()`, etc.
 
-II) Script vs Module
+III) Script vs Module
 
-- **Script**: File run directly with `python filename.py`
-- **Module**: File imported into another script
+- **Script**: File run directly with `python filename.py`.
+- **Module**: File imported into another script.
 
-III) Norme 
+IV) Norme 
 
-You can use flake8 for the norme. You can find the doc [here][flake8 doc]
+Coding conventions for the Python code comprising the standard library in the main Python distribution: [Python Style Guide][Python Style Guide].
+You can use Flake8 for the norme. You can find the doc [here][Flake8 Doc].
+
+```bash
+pip install flake8
+# or
+python -m pip install flake8
+# Add the local bin directory to your PATH if needed as user
+```
+
+**Adding to PATH explanation:**
+- When you install packages with `pip install --user`, they are installed in your user directory
+- The executable files (like `flake8`) are placed in `~/.local/bin/` (Linux/Mac)
+- You need to add this directory to your PATH environment variable so the system can find the executable
+- **Linux/Mac**: Add `export PATH="$HOME/.local/bin:$PATH"` to your `~/.bashrc` or `~/.zshrc`
+- **Alternative method**: You can also uncomment (remove the #) the existing PATH line in your `~/.zshrc` file that already contains this export
+- After adding to PATH, restart your terminal or run `source ~/.zshrc` (Linux/Mac)
 
 ---
 
-<div align="center">
 
 ## Theory point/Concept
 
-</div>
+### I) Basic types 
 
-### I) Basic Data types
+**1. String**
+
+Text data type for storing sequences of characters.
+
+```python
+name = "Hello"
+message = 'World'
+print(f"{name}, {message}!")  # Hello, World!
+
+# String concatenation
+first_name = "John"
+last_name = "Doe"
+full_name = first_name + " " + last_name
+print(full_name)  # John Doe
+
+# Multiple concatenation methods
+greeting = "Hello"
+name = "Alice"
+# Method 1: + operator
+result1 = greeting + ", " + name + "!"
+# Method 2: f-string (recommended)
+result2 = f"{greeting}, {name}!"
+print(result1)  # Hello, Alice!
+print(result2)  # Hello, Alice!
+```
+
+Check for [F-string](#ii-f-string)
+
+
+**2. Integer**
+
+Whole number data type for mathematical operations.
+
+```python
+age = 25
+count = 10
+result = age + count
+print(result)  # 35
+```
+
+**3. Float**
+
+Decimal number data type for precise mathematical calculations.
+
+```python
+price = 19.99
+temperature = 36.5
+result = price * 1.1
+print(result)  # 21.989
+```
+
+### II) Basic Data types
 
 **1. List**
 
@@ -169,7 +235,7 @@ Unordered, mutable collection of key-value pairs.
   - Mutable (can be modified after creation)
   - No duplicate keys (keys must be unique)
 
-**Example:**
+**Example**
 ```python
 # Create
 person = {"name": "John", "age": 30, "city": "New York"}
@@ -540,7 +606,6 @@ print(len.__doc__)
 # Output: Return the number of items in a container.
 ```
 
-
 **Key points:**
 
 - `__doc__` - Contains the docstring (documentation) of functions, classes, or modules
@@ -652,7 +717,50 @@ print(sorted_by_age)  # [('Bob', 18), ('Alice', 20), ('Charlie', 22)]
 - **Perfect for:** simple, one-time operations like filtering, mapping, or sorting
 
 
-### VIII) List comprehension
+### VIII) `yield`
+
+yield is a keyword that creates a generator function. It allows a function to return values one at a time instead of all at once
+
+**1. Comparison: return vs yield**
+
+**a) return - Returns all values at once**
+
+```python
+def get_numbers():
+    return [1, 2, 3, 4, 5]
+
+numbers = get_numbers()  # Returns the entire list at once
+print(numbers)  # [1, 2, 3, 4, 5]
+```
+
+**b) yield - Returns values one by one**
+
+```python
+def get_numbers():
+    yield 1
+    yield 2
+    yield 3
+    yield 4
+    yield 5
+
+numbers = get_numbers()  # Returns a generator object
+print(numbers)
+```
+
+**2. How yield works:**
+
+```python
+def count_up_to(n):
+    for i in range(n):
+        yield i  # Pauses here and returns i
+
+# Usage:
+for num in count_up_to(5):
+    print(num)
+# Output: 0, 1, 2, 3, 4
+```
+
+### IX) List comprehension
 
 Concise way to create lists by applying an expression to each item in an iterable, optionally with conditions. More readable and often faster than traditional for loops.
 
@@ -664,7 +772,7 @@ result = [expression for item in iterable if condition]
 
 **1. Basic examples**
 
-**a) Basic list comprehension (+counter-example)** 
+**a) Basic list comprehension (+counter-example)**
 ```python
 numbers = [1, 2, 3, 4, 5]
 squares = [x**2 for x in numbers]
@@ -704,7 +812,6 @@ flattened = [num for row in matrix for num in row]
 print(flattened)  # [1, 2, 3, 4, 5, 6]
 ```
 
-
 **Key points:**
 
 - **More concise** than traditional for loops
@@ -713,11 +820,39 @@ print(flattened)  # [1, 2, 3, 4, 5, 6]
 - **Can use if-else** for transformations
 - **Supports nesting** for complex operations
 
-<div align="center">
+
+### X) Create a package
+
+Process of organizing Python code into reusable, distributable packages that can be installed and imported by other projects.
+
+Check [here][] for a simple example.
+
+**Package structure**
+  - `__init__.py` file makes directory a Python package
+  - `__all__` list defines public API of the package
+  - `__version__` variable stores package version
+**Package configuration**
+  - `pyproject.toml` file for modern Python packaging
+  - Project metadata (name, version, description, license)
+  - Build system requirements and classifiers
+**Package distribution**
+  - Building packages with `python -m build` in the package folder
+  - Installing local packages with `pip install`
+  - Package verification and management
+**Relative imports**
+  - `from .core import function` for same-package imports
+  - Using dots to indicate relative module location
+**Command summary**
+  - **Build**: python -m build
+  - **Install**: python -m pip install ./dist/ft_package-0.0.1.tar.gz
+  - **Verify**: python -m pip show -v ft_package
+  - **Unbuild**: rm -rf build/ dist/ *.egg-info
+  - **Uninstall**: python -m pip uninstall ft_package
+  - **List of installed packages**: python -m pip list
+
+For more informations: [Create a Package][Create a Package].
 
 ## Basic and useful built-in function, keyword, variable
-
-</div>
 
 ### I) Keyword
 
@@ -725,6 +860,7 @@ print(flattened)  # [1, 2, 3, 4, 5, 6]
 
 Keyword used to define functions. Functions are reusable blocks of code that perform specific tasks.
 
+**Example**  
 ```python
 def greet(name):
     return f"Hello, {name}!"
@@ -733,8 +869,62 @@ result = greet("Alice")
 print(result)  # Output: Hello, Alice!
 ```
 
-Functions can have type hints to specify parameter and return types:
+**Example with multiple return values**  
+Functions can return multiple values using tuples. Python automatically packs/unpacks tuples for multiple returns.
 
+```python
+# Function that returns multiple values
+def get_name_and_age():
+    name = "John"
+    age = 30
+    return name, age  # Returns a tuple (name, age)
+
+# Unpacking multiple returns
+name, age = get_name_and_age()
+print(f"Name: {name}, Age: {age}")  # Name: John, Age: 30
+
+# Alternative: receive as tuple
+result = get_name_and_age()
+print(result)  # ('John', 30)
+
+# Practical example: calculate area and perimeter
+def rectangle_info(length, width):
+    area = length * width
+    perimeter = 2 * (length + width)
+    return area, perimeter
+
+area, perimeter = rectangle_info(5, 3)
+print(f"Area: {area}, Perimeter: {perimeter}")  # Area: 15, Perimeter: 16
+```
+
+**Example with function as parameter**
+```python
+def apply_operation(x: int, operation) -> int:
+    """Apply a function to a number"""
+    return operation(x)
+
+# Define simple functions
+def double(n):
+    return n * 2
+
+def square(n):
+    return n * n
+
+# Use the function with different operations
+result1 = apply_operation(5, double)
+print(result1)  # 10
+
+result2 = apply_operation(5, square)
+print(result2)  # 25
+
+# With lambda function
+result3 = apply_operation(5, lambda x: x + 1)
+print(result3)  # 6
+```
+
+Functions can have type hints to specify parameter and return types. More: [Type Hints in Python][Type Hints in Python].
+
+**Example**
 ```python
 def add_numbers(a: int, b: int) -> int:
     return a + b
@@ -745,6 +935,70 @@ def get_name() -> str:
 def process_data(data: list[str]) -> dict[str, int]:
     return {"count": len(data)}
 ```
+
+**Exemple with two type of return**
+```python
+def safe_divide(a: int, b: int) -> float | None:
+    """Divide two numbers, return None if division by zero"""
+    if b == 0:
+        return None
+    return a / b
+
+result = safe_divide(10, 2)
+if result is not None:
+    print(f"Result: {result}")  # Result: 5.0
+else:
+    print("Cannot divide by zero")
+```
+
+```python
+def calculate_square(value: str) -> int | str:
+    """Calculate square of a number, return error if invalid input"""
+    try:
+        num = int(value)
+        return num * num
+    except ValueError:
+        return f"Cannot calculate square of '{value}' - not a number"
+
+# Test the function
+test_values = ["5", "hello", "10", "world"]
+for val in test_values:
+    result = calculate_square(val)
+    if isinstance(result, int):
+        print(f"Square of {val} = {result}")
+    else:
+        print(result)
+# Output:
+# Square of 5 = 25
+# Cannot calculate square of 'hello' - not a number
+# Square of 10 = 100
+# Cannot calculate square of 'world' - not a number
+```
+
+**Example with mutliple return**
+```python
+def get_user_info() -> tuple[str, int]:
+    return "Alice", 25
+
+def calculate_stats(numbers: list[int]) -> tuple[float, int]:
+    return sum(numbers) / len(numbers), len(numbers)  # (average, count)
+```
+
+(Note): Separate key points in the two sections 
+**Key points**
+
+- **Single return** - Use `return value`
+- **Multiple returns** - Use `return value1, value2` (returns tuple)
+- **Unpacking** - Use `var1, var2 = function()` to get individual values
+- **Higher-order function** - A function that takes or returns other functions
+- **Function parameter** - Functions can accept other functions as arguments
+- **Lambda support** - Can pass anonymous functions (lambda) as parameters
+
+- **Type hints** - Use `-> tuple[type1, type2]` for multiple return types
+- **Automatic packing** - Python automatically creates tuples for multiple returns
+- **`type1 | type2`** - Function can return either a float or None
+- **Union syntax** - `type1 | type2` (Python 3.10+)
+
 
 #### if/elif/else
 
@@ -760,18 +1014,6 @@ elif age == 18:
 else:
     print("Adult")
 # Output: Just became adult
-```
-
-#### in
-
-Membership operator used to check if a value exists in a sequence (list, tuple, string, etc.).
-
-```python
-fruits = ["apple", "banana", "orange"]
-
-if "apple" in fruits:
-    print("Apple found!")
-# Output: Apple found!
 ```
 
 #### is (+not)
@@ -819,7 +1061,6 @@ num3 = 257
 num4 = 257
 print(num3 is num4)  # False (different objects)
 ```
-
 
 **Key points about `is`:**
 
@@ -956,6 +1197,19 @@ for i in range(3):
 - Python's most fundamental constructs
 - Used extensively for iterating over sequences, collections, and other iterable objects
 
+
+#### in
+
+Membership operator used to check if a value exists in a sequence (list, tuple, string, etc.).
+
+```python
+fruits = ["apple", "banana", "orange"]
+
+if "apple" in fruits:
+    print("Apple found!")
+# Output: Apple found!
+```
+
 #### while
 
 Loop keyword used to repeat code while a condition is true.
@@ -1002,6 +1256,7 @@ print("Hello my friend")
 ```
 
 #### try/except, raise
+
 Error handling keywords. `try/except` catches errors, `raise` creates custom errors.
 
 ```python
@@ -1245,13 +1500,20 @@ print(numbers)  # [0, 1, 2, 3, 4]
 - **Conversion** - Python provides multiple built-in conversion functions (also called type constructors) to transform data from one type to another
 - **List of conversion functions:** `str()`, `int()`, `float()`, `list()`, `tuple()`, `set()`, `dict()`, `bool()`, `bytes()` 
 
+---
 
 ## Additional Resources
 
-- [Python Official Documentation](https://docs.python.org/)
-- [Built-in exceptions](https://docs.python.org/3/library/exceptions.html)
-- [flake8 doc](https://flake8.pycqa.org/en/latest/)
+[Python Official Documentation](https://docs.python.org/)  
+[Python Style Guide](https://www.python.org/dev/peps/pep-0008/)  
+[Flake8 Doc](https://flake8.pycqa.org/en/latest/)  
+[Type Hints in Python](https://www.geeksforgeeks.org/python/type-hints-in-python/)  
+[Built-in Exceptions](https://docs.python.org/3/library/exceptions.html)  
+[Create a Package](https://packaging.python.org/en/latest/tutorials/packaging-projects/)  
 
 [Python Official Documentation]: https://docs.python.org/
-[Built-in exceptions]: https://docs.python.org/3/library/exceptions.html
-[flake8 doc]: https://flake8.pycqa.org/en/latest/
+[Built-in Exceptions]: https://docs.python.org/3/library/exceptions.html
+[Flake8 Doc]: https://flake8.pycqa.org/en/latest/
+[Type Hints in Python]: https://www.geeksforgeeks.org/python/type-hints-in-python/
+[Built-in Exceptions]: https://docs.python.org/3/library/exceptions.html
+[Create a Package]: https://packaging.python.org/en/latest/tutorials/packaging-projects/

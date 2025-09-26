@@ -113,7 +113,7 @@ c) Create a variable for link if need to reuse
 
 **Result:**
 
-[Markdown's Wikipedia 1][Markdown's Wikipedia]
+[Markdown's Wikipedia 1][Markdown's Wikipedia]  
 [Markdown's Wikipedia 2][Markdown's Wikipedia]
 
 [Markdown's Wikipedia]: https://fr.wikipedia.org/wiki/Markdown

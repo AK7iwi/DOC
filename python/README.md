@@ -1308,7 +1308,7 @@ except ValueError as e:
 - `except Exception as e`: catch any exception and access error details
 - **Error details access** - using `e` to get the error message and `type(e).__name__` to get the error type
 - **Python vs C++**: `try` = `try`, `except` = `catch`, `raise` = `throw`
-- `ZeroDivisionError`, `ValueError`, `AssertionError`, and `Exception` are Python error classes (Built-in exception). `Exception` is the most general class and catches all exceptions. Documentation about [Built-in exception][Built-in exceptions]
+- `ZeroDivisionError`, `ValueError`, `AssertionError`, and `Exception` are Python error classes (Built-in exception). `Exception` is the most general class and catches all exceptions. Documentation about [Built-in Exceptions][Built-in Exceptions]
 
 ### II) Built-in
 
@@ -1512,7 +1512,7 @@ print(numbers)  # [0, 1, 2, 3, 4]
 [Create a Package](https://packaging.python.org/en/latest/tutorials/packaging-projects/)  
 
 [Python Official Documentation]: https://docs.python.org/
-[Built-in Exceptions]: https://docs.python.org/3/library/exceptions.html
+[Python Style Guide]: https://www.python.org/dev/peps/pep-0008/
 [Flake8 Doc]: https://flake8.pycqa.org/en/latest/
 [Type Hints in Python]: https://www.geeksforgeeks.org/python/type-hints-in-python/
 [Built-in Exceptions]: https://docs.python.org/3/library/exceptions.html

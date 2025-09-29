@@ -137,7 +137,7 @@ duplicate_list = ["apple", "banana", "apple", "orange", "banana"]
 print(duplicate_list)        # ["apple", "banana", "apple", "orange", "banana"]
 print(len(duplicate_list))   # 5 (counts all elements including duplicates)
 print(duplicate_list.count("apple"))  # 2 (counts occurrences of "apple")
-```
+``` 
 
 **2. Tuple**
 

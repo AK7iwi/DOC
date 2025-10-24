@@ -29,7 +29,7 @@ https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301
 
 7) Parsing Struct / Info Struct
 
-Stuct modifer dans une fct. Pas les int,char,... Besoin d'un return;
+Stuct modifer dans une fct. Pas les int,char,... Besoin d'un return.
 
 Ex1) 
 

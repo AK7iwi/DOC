@@ -9,7 +9,3 @@ Usefulle cmd
 - Difference between two files
 
 `diff` file1 file2
-
-In a git repo:
-
-`git diff` file1 file2

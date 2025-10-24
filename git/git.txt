@@ -15,32 +15,37 @@ https://www.sebastien-gandossi.fr/blog/git-supprimer-une-branche-locale-ou-dista
 
 git push origin --delete [nom-de-ma-branche]
 
-a) Merge : 
+- Merge : 
 
 Git sheetcheat 
 
-b) Rewrite a commit: 
+- Rewrite a commit: 
 
 git commit --amend
 git push -f (if the commit is already push)
 
-c) Description: 
+- Description: 
 
 There is also another straight and more clear way
 
 git commit -m "Title" -m "Description ..........";
 
-d) restore file to the previous commit (local)
+- Restore file to the previous commit (local)
 
 The all project : git restore . 
 A folder : git restore /folder 
 
-e) Come back to a precedent commit (distant)
+- Come back to a precedent commit (distant)
 
 git reset --hard <commit>
 git push -f
 
-x)Norme commit :
+- Difference with the previous commit
+
+`git diff` file1 file2
+
+
+- Norme commit :
 
 feat(graphics): this and
 fix 

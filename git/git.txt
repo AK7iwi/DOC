@@ -1,4 +1,8 @@
 
+
+
+- Create a branch
+
 How to fork and create a new branch
 
 https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project
@@ -14,6 +18,11 @@ Supprimer une branche local ou distante
 https://www.sebastien-gandossi.fr/blog/git-supprimer-une-branche-locale-ou-distante
 
 git push origin --delete [nom-de-ma-branche]
+
+
+
+- `git status`
+
 
 - Merge : 
 
@@ -42,8 +51,7 @@ git push -f
 
 - Difference with the previous commit
 
-`git diff` file1 file2
-
+`git diff` file
 
 - Norme commit :
 

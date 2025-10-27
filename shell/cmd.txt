@@ -9,3 +9,7 @@ Usefulle cmd
 - Difference between two files
 
 `diff` file1 file2
+
+- 'clear'
+
+clear the terminal

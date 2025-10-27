@@ -9,3 +9,5 @@
 // ctrl + fleche_right/fleche_left = bouger de mot en mot
 // Alt + tab = changer de fenetre 
 // ctrl + K + W - Close all files of VSCODE
+
+

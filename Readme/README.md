@@ -9,7 +9,6 @@ You can use HTML directly in the README
 ### MODULE 00 - Starting
 
 </div>
-
 ```
 
 **Result:**
@@ -104,7 +103,6 @@ c) Create a variable for link if need to reuse
 `[link_var]: link`
 
 ```markdown
-
 [Markdown's Wikipedia 1][Markdown's Wikipedia]
 [Markdown's Wikipedia 2][Markdown's Wikipedia]
 

@@ -21,5 +21,6 @@ Commentaire: Ctrl + /
 
 Close window: Shift + Ctrl + Q
 Close terminal: Shift + Ctrl + W
-Split terminal: Shift + Ctrl+ O/E (Horizontally, Vertically)
+Split terminal: Shift + Ctrl + O/E (Horizontally, Vertically)
+Switch terminal: Alt + Arrow_left/Arrow_right
 Zoom terminal: Shift + Ctrl + Z

@@ -1,0 +1,25 @@
+/* control list*/
+
+
+- General
+
+Monter/descendre une ligne: Alt + Arrow_up/Arrow_down
+Selectionner/surligner: Shift + Arrow_left/Arrow_right
+Bouger de mot en mot: Ctrl + Arrow_right/Arrow_left
+Couper une ligne: Ctrl + X
+Changer de fenetre: Alt + tab
+
+
+- vscode
+
+Open the terminal: Ctrl + J
+Close all files of vscode: Ctrl + K + W
+Commentaire: Ctrl + /
+
+
+- Terminator
+
+Close window: Shift + Ctrl + Q
+Close terminal: Shift + Ctrl + W
+Split terminal: Shift + Ctrl+ O/E (Horizontally, Vertically)
+Zoom terminal: Shift + Ctrl + Z

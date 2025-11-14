@@ -13,3 +13,7 @@ Usefulle cmd
 - 'clear'
 
 clear the terminal
+
+- 'tree'
+
+See the tree structure 

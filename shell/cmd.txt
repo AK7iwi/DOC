@@ -1,24 +1,21 @@
-
 Usefulle cmd 
 
-- Search a file/directory or executable:
-
-files and directories:
+- Search a file/directory
 
 `find -name file/directory`
 
-executable:
+- Search an executable:
 
 `which executable`
 
 - Difference between two files
 
-`diff` file1 file2
+`diff file1 file2`
 
-- 'clear'
+- clear the terminal
 
-clear the terminal
+'clear'
 
-- 'tree'
+- See the tree structure 
 
-See the tree structure 
+'tree'

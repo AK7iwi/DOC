@@ -3,8 +3,13 @@ Usefulle cmd
 
 - Search a file/directory or executable:
 
-`find` for files and directories
-`which` for executable
+files and directories:
+
+`find -name file/directory`
+
+executable:
+
+`which executable`
 
 - Difference between two files
 

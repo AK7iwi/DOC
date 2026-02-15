@@ -20,6 +20,15 @@ https://www.sebastien-gandossi.fr/blog/git-supprimer-une-branche-locale-ou-dista
 git push origin --delete [nom-de-ma-branche]
 
 
+- git config 
+
+Setup setup the push infos
+
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+
+https://www.w3schools.com/git/git_config.asp
+
 
 - `git status`
 

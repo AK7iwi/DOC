@@ -246,9 +246,30 @@ print(person["name"])        # "John"
 print(person.get("age"))     # 30 (safer method)
 print(person.get("phone", "Not found"))  # "Not found" (default value)
 
+Get all Keys Using key() Method:
+
+keys = a.keys()
+print(keys) # ['geeks', 'for', 'Geeks']
+
+for key in a:  
+    print(key, a[key])
+
+Get all values Using values() Method:
+
+values = a.values()
+print(values) # [3, 2, 1]
+
+Get key-value Using dict.items():
+
+for key, value in a.items():  
+    print(f"{key}: {value}")
+
+
 # Modify
 person["age"] = 31           # {"name": "John", "age": 31, "city": "New York"}
 person["city"] = "Boston"    # {"name": "John", "age": 31, "city": "Boston"}
+
+.fromkeys()
 
 # Add/Remove
 person["email"] = "john@email.com"  # Add new key-value pair
@@ -1418,6 +1439,16 @@ print(f"{num1} + {num2} = {result}")
 # 10.5 + 5.2 = 15.7
 ```
 
+##The strip() method removes any leading, and trailing whitespaces.
+
+txt = "     banana     "
+
+x = txt.strip()
+
+print("of all fruits", x, "is my favorite")
+
+output: 
+of all fruits banana is my favorite
 
 **Key points:**
 
